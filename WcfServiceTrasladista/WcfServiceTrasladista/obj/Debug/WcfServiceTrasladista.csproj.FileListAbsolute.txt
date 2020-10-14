@@ -1,0 +1,10 @@
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll.config
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.pdb
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaSQL.dll
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaSQL.pdb
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csprojAssemblyReference.cache
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CoreCompileInputs.cache
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CopyComplete
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.dll
+C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.pdb
