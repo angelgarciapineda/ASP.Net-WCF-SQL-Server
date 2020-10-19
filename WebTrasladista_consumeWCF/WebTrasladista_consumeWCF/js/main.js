@@ -1,4 +1,4 @@
-jQuery(function ($) {
+﻿jQuery(function ($) {
   // Dropdown menu
   $('.sidebar-dropdown > a').click(function () {
     $('.sidebar-submenu').slideUp(200);

@@ -76,9 +76,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="CSS\EstiloTrasladista.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\sidebar-themes.css" />
     <Content Include="Home.aspx" />
-    <Content Include="JS\JavaScript.js" />
+    <Content Include="js\main.js" />
     <Content Include="Traslado.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -146,6 +147,17 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="sass\main.scss" />
+    <Content Include="sass\sidebar-themes.scss" />
+    <Content Include="sass\_animation.scss" />
+    <Content Include="sass\_mixin.scss" />
+    <Content Include="sass\_sidebar-brand.scss" />
+    <Content Include="sass\_sidebar-footer.scss" />
+    <Content Include="sass\_sidebar-header.scss" />
+    <Content Include="sass\_sidebar-menu.scss" />
+    <Content Include="sass\_sidebar-search.scss" />
+    <Content Include="sass\_sidebar-wrapper.scss" />
+    <Content Include="sass\_variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -158,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
