@@ -117,5 +117,40 @@ namespace ClassManejaSQL
 
             return contenedorgrande;
         }
+
+        public SqlDataReader ConsultaDataReaderConParametros(ref SqlConnection ConexAbierta, string query, SqlParameter[] para, ref string mensaje)
+        {
+            SqlDataReader contenedor = null;
+            SqlCommand TransporteSQL = new SqlCommand();
+
+            foreach (SqlParameter n in para)
+            {
+                TransporteSQL.Parameters.Add(n);
+            }
+
+            if (ConexAbierta != null)
+            {
+                TransporteSQL.Connection = ConexAbierta;
+                TransporteSQL.CommandText = query;
+
+                try
+                {
+                    contenedor = TransporteSQL.ExecuteReader();
+                    mensaje = "Consulta Correcta";
+                }
+                catch (Exception c)
+                {
+                    mensaje = "Error" + c.Message;
+                    contenedor = null;
+                }
+            }
+            else
+            {
+                mensaje = "No hay conexion abierta";
+                contenedor = null;
+            }
+
+            return contenedor;
+        }
     }
 }

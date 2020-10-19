@@ -33,5 +33,28 @@ namespace WebTrasladista_consumeWCF
 
             Session["idstemp"] = idspro;
         }
+
+        protected void btnagregar_Click(object sender, EventArgs e)
+        {
+            string msj = "";
+            try
+            {
+                int i = 0; //id de Gasto
+
+                double total = Convert.ToInt16(txtcantidad.Text) * Convert.ToDouble(txtprecio.Text);
+
+                i = uno.InsertaGasto(Convert.ToInt16(txtduracion.Text), txtrestri.Text, txtneces.Text,
+                    Convert.ToDouble(txtkm.Text), Convert.ToInt16(txttiempotrans.Text), Convert.ToDouble(txtcontroltrans.Text),
+                    Convert.ToDouble(txtsueldo.Text), Convert.ToDouble(txtsalario.Text), Convert.ToDouble(txtcostocaseta.Text),
+                    total, ref msj);
+                lbConexion.Text = i.ToString();
+
+                uno.InsertaGastoVehiculo(Convert.ToInt16(txtcantidad.Text), Convert.ToDouble(txtprecio.Text), 2,1, ref msj);
+            }
+            catch (Exception)
+            {
+                lbConexion.Text = msj;
+            }
+        }
     }
 }

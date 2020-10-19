@@ -19,6 +19,15 @@ namespace WcfServiceTrasladista
 
         [OperationContract]
         void MuestraDatos(List<string> cad, DropDownList cmb1);
+
+        [OperationContract]
+        int InsertaGasto(int duracion, string restriccion, string necesidad, double km,
+            int tiempo_trans, double costo_trans, double sueldo,
+            double salario, double costo_casetas, double total, ref string mensaje);
+
+        [OperationContract]
+        void InsertaGastoVehiculo(int cantidad, double precio, int fkgasto, int fkvehiculo, ref string mensaje);
+
         // TODO: agregue aquí sus operaciones de servicio
 
     }

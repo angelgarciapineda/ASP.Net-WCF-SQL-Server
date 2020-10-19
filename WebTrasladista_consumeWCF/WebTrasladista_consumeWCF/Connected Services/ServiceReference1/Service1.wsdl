@@ -26,6 +26,18 @@
   <wsdl:message name="IService1_MuestraDatos_OutputMessage">
     <wsdl:part name="parameters" element="tns:MuestraDatosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_InsertaGasto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaGasto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertaGasto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaGastoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertaGastoVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaGastoVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertaGastoVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaGastoVehiculoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ObtenOperador">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenOperador" message="tns:IService1_ObtenOperador_InputMessage" />
@@ -34,6 +46,14 @@
     <wsdl:operation name="MuestraDatos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/MuestraDatos" message="tns:IService1_MuestraDatos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/MuestraDatosResponse" message="tns:IService1_MuestraDatos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertaGasto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaGasto" message="tns:IService1_InsertaGasto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaGastoResponse" message="tns:IService1_InsertaGasto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertaGastoVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaGastoVehiculo" message="tns:IService1_InsertaGastoVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaGastoVehiculoResponse" message="tns:IService1_InsertaGastoVehiculo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -49,6 +69,24 @@
     </wsdl:operation>
     <wsdl:operation name="MuestraDatos">
       <soap:operation soapAction="http://tempuri.org/IService1/MuestraDatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaGasto">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertaGasto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaGastoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertaGastoVehiculo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

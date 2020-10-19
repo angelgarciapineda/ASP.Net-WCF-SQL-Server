@@ -17,6 +17,16 @@ namespace WcfServiceTrasladista
     {
         LogicaServicio objfinal = new LogicaServicio();
 
+        public int InsertaGasto(int duracion, string restriccion, string necesidad, double km, int tiempo_trans, double costo_trans, double sueldo, double salario, double costo_casetas, double total, ref string mensaje)
+        {
+            return objfinal.InsertToGasto_servicio(duracion, restriccion, necesidad, km, tiempo_trans, costo_trans, sueldo, salario, costo_casetas, total, ref mensaje);
+        }
+
+        public void InsertaGastoVehiculo(int cantidad, double precio, int fkgasto, int fkvehiculo, ref string mensaje)
+        {
+            objfinal.InsertToGastoServicio_Vehiculo(cantidad, precio, fkgasto, fkvehiculo, ref mensaje);
+        }
+
         public void MuestraDatos(List<string> cad, DropDownList cmb1)
         {
             objfinal.MuestraDatosConID(cad, cmb1);
