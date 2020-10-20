@@ -1,459 +1,219 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs"
-Inherits="WebTrasladista_consumeWCF.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="WebTrasladista_consumeWCF.Home" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head runat="server">
+<head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-    <link href="css/main.css" rel="stylesheet" />
-    <link href="css/sidebar-themes.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <title></title>
-  </head>
-  <body>
-    <div class="page-wrapper chiller-theme toggled">
-      <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-        <i class="fas fa-bars"></i>
-      </a>
-      <nav id="sidebar" class="sidebar-wrapper">
-        <div class="sidebar-content">
-          <div class="sidebar-brand">
-            <a href="#">pro sidebar</a>
-            <div id="close-sidebar">
-              <i class="fas fa-times"></i>
-            </div>
-          </div>
-          <div class="sidebar-header">
-            <div class="user-pic">
-              <img
-                class="img-responsive img-rounded"
-                src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-                alt="User picture"
-              />
-            </div>
-            <div class="user-info">
-              <span class="user-name"
-                >Jhon
-                <strong>Smith</strong>
-              </span>
-              <span class="user-role">Administrator</span>
-              <span class="user-status">
-                <i class="fa fa-circle"></i>
-                <span>Online</span>
-              </span>
-            </div>
-          </div>
-          <!-- sidebar-header  -->
-          <div class="sidebar-search">
-            <div>
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control search-menu"
-                  placeholder="Search..."
-                />
-                <div class="input-group-append">
-                  <span class="input-group-text">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- sidebar-search  -->
-          <div class="sidebar-menu">
-            <ul>
-              <li class="header-menu">
-                <span>General</span>
-              </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-tachometer-alt"></i>
-                  <span>Dashboard</span>
-                  <span class="badge badge-pill badge-warning">New</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a href="#"
-                        >Dashboard 1
-                        <span class="badge badge-pill badge-success">Pro</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">Dashboard 2</a>
-                    </li>
-                    <li>
-                      <a href="#">Dashboard 3</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-shopping-cart"></i>
-                  <span>E-commerce</span>
-                  <span class="badge badge-pill badge-danger">3</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a href="#">Products </a>
-                    </li>
-                    <li>
-                      <a href="#">Orders</a>
-                    </li>
-                    <li>
-                      <a href="#">Credit cart</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="far fa-gem"></i>
-                  <span>Components</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a href="#">General</a>
-                    </li>
-                    <li>
-                      <a href="#">Panels</a>
-                    </li>
-                    <li>
-                      <a href="#">Tables</a>
-                    </li>
-                    <li>
-                      <a href="#">Icons</a>
-                    </li>
-                    <li>
-                      <a href="#">Forms</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-chart-line"></i>
-                  <span>Charts</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a href="#">Pie chart</a>
-                    </li>
-                    <li>
-                      <a href="#">Line chart</a>
-                    </li>
-                    <li>
-                      <a href="#">Bar chart</a>
-                    </li>
-                    <li>
-                      <a href="#">Histogram</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="sidebar-dropdown">
-                <a href="#">
-                  <i class="fa fa-globe"></i>
-                  <span>Maps</span>
-                </a>
-                <div class="sidebar-submenu">
-                  <ul>
-                    <li>
-                      <a href="#">Google maps</a>
-                    </li>
-                    <li>
-                      <a href="#">Open street map</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="header-menu">
-                <span>Extra</span>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-book"></i>
-                  <span>Documentation</span>
-                  <span class="badge badge-pill badge-primary">Beta</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-calendar"></i>
-                  <span>Calendar</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-folder"></i>
-                  <span>Examples</span>
-                </a>
-              </li>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
             </ul>
-          </div>
-          <!-- sidebar-menu  -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-        <!-- sidebar-content  -->
-        <div class="sidebar-footer">
-          <a href="#">
-            <i class="fa fa-bell"></i>
-            <span class="badge badge-pill badge-warning notification">3</span>
-          </a>
-          <a href="#">
-            <i class="fa fa-envelope"></i>
-            <span class="badge badge-pill badge-success notification">7</span>
-          </a>
-          <a href="#">
-            <i class="fa fa-cog"></i>
-            <span class="badge-sonar"></span>
-          </a>
-          <a href="#">
-            <i class="fa fa-power-off"></i>
-          </a>
-        </div>
-      </nav>
-      <!-- sidebar-wrapper  -->
-      <main class="page-content">
-        <div class="container">
-          <h2>Pro Sidebar</h2>
-          <hr />
-          <div class="row">
-            <div class="form-group col-md-12">
-              <p>
-                This is a responsive sidebar template with dropdown menu based
-                on bootstrap 4 framework.
-              </p>
-              <p>
-                You can find the complete code on
-                <a
-                  href="https://github.com/azouaoui-med/pro-sidebar-template"
-                  target="_blank"
-                >
-                  Github</a
-                >, it contains more themes and background image option
-              </p>
+    </nav>
+
+    <form id="form1" runat="server">
+        <div class="card">
+            <div class="card-header">
+                Home
             </div>
-            <div class="form-group col-md-12">
-              <iframe
-                src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=small"
-                frameborder="0"
-                scrolling="0"
-                width="90px"
-                height="30px"
-              ></iframe>
-              <iframe
-                src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=small"
-                frameborder="0"
-                scrolling="0"
-                width="90px"
-                height="30px"
-              ></iframe>
-            </div>
-            <div class="form-group col-md-12">
-              <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">New !</h4>
-                <p>
-                  New react pro sidebar library is now available on
-                  <a
-                    href="https://www.npmjs.com/package/react-pro-sidebar"
-                    target="_blank"
-                    >npm</a
-                  >
-                  <a
-                    href="https://github.com/azouaoui-med/react-pro-sidebar"
-                    target="_blank"
-                  >
-                    <img
-                      alt="GitHub stars"
-                      src="https://img.shields.io/github/stars/azouaoui-med/react-pro-sidebar?style=social"
-                    />
-                  </a>
-                </p>
-                <a
-                  href="https://github.com/azouaoui-med/react-pro-sidebar"
-                  target="_blank"
-                  class="btn btn-sm btn-primary mr-2"
-                >
-                  Github</a
-                >
-                <a
-                  href="https://azouaoui-med.github.io/react-pro-sidebar"
-                  target="_blank"
-                  class="btn btn-sm btn-success"
-                >
-                  Demo</a
-                >
-              </div>
-            </div>
-          </div>
-          <h5>More templates</h5>
-          <hr />
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-              <div class="card rounded-0 p-0 shadow-sm">
-                <img
-                  src="https://user-images.githubusercontent.com/25878302/58369568-a49b2480-7efc-11e9-9ca9-2be44afacda1.png"
-                  class="card-img-top rounded-0"
-                  alt="Angular pro sidebar"
-                />
-                <div class="card-body text-center">
-                  <h6 class="card-title">Angular Pro Sidebar</h6>
-                  <a
-                    href="https://github.com/azouaoui-med/angular-pro-sidebar"
-                    target="_blank"
-                    class="btn btn-primary btn-sm"
-                    >Github</a
-                  >
-                  <a
-                    href="https://azouaoui-med.github.io/angular-pro-sidebar/demo/"
-                    target="_blank"
-                    class="btn btn-success btn-sm"
-                    >Demo</a
-                  >
-                  <hr />
-                  <a
-                    href="https://github.com/azouaoui-med/react-pro-sidebar"
-                    target="_blank"
-                  >
-                    <img
-                      alt="GitHub stars"
-                      src="https://img.shields.io/github/stars/azouaoui-med/angular-pro-sidebar?style=social"
-                    />
-                  </a>
-                  <a
-                    href="https://github.com/azouaoui-med/react-pro-sidebar"
-                    target="_blank"
-                  >
-                    <img
-                      alt="GitHub stars"
-                      src="https://img.shields.io/github/forks/azouaoui-med/angular-pro-sidebar?style=social"
-                    />
-                  </a>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <div class="row">
+                    <%-- Tarjeta lateral izquierda --%>
+                    <div class="col-3">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a>
+                                <div class="card">
+                                    <img src="https://cdn.icon-icons.com/icons2/67/PNG/512/user_13230.png" class="card-img-top" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Administrador</h5>
+                                        <p class="card-text">Luis Angel Garcia Pineda</p>
+                                        <a href="#" class="btn btn-primary">Configuración</a>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Servicio</a>
+                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Registros</a>
+                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Estadisticas</a>
+                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Base de datos</a>
+                            <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Cerrar sesión</a>
+                        </div>
+                    </div>
+                    <%-- Tarjeta central --%>
+                    <div class="col-9">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <%-- INICIO PANEL DE HOME --%>
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <%-- TARJETA DE CALCULAR GASTO DE SERVICIO --%>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    Calcular gasto de servicio
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Button ID="btnCargarOperador" runat="server" OnClick="btnCargarOperador_Click" class="btn btn-primary btn-block" Text="Operadores disponible" />
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <asp:DropDownList ID="cmbOperador" runat="server" class="form-control">
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label1" runat="server" Text="Duracion"></asp:Label>
+                                                            <asp:TextBox ID="txtduracion" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label2" runat="server" Text="Kilometros"></asp:Label>
+                                                            <asp:TextBox ID="txtkm" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label for="inputAddress" ID="Label3" runat="server" Text="Tiempo de transporte"></asp:Label>
+                                                            <asp:TextBox ID="txttiempotrans" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label4" runat="server" Text="Costo de transporte"></asp:Label>
+                                                            <asp:TextBox ID="txtcontroltrans" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label5" runat="server" Text="Sueldo"></asp:Label>
+                                                            <asp:TextBox ID="txtsueldo" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label6" runat="server" Text="Salario"></asp:Label>
+                                                            <asp:TextBox ID="txtsalario" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <asp:Label ID="Label7" runat="server" Text="Costo de casetas"></asp:Label>
+                                                        <asp:TextBox ID="txtcostocaseta" runat="server" class="form-control"></asp:TextBox>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <asp:Label ID="Label8" runat="server" Text="Restricciones"></asp:Label>
+                                                        <asp:TextBox ID="txtrestri" runat="server" class="form-control"></asp:TextBox>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <asp:Label ID="Label9" runat="server" Text="Necesidades"></asp:Label>
+                                                        <asp:TextBox ID="txtneces" runat="server" class="form-control"></asp:TextBox>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Button ID="Button1" runat="server" Text="Vehiculos disponibles" class="btn btn-block btn-primary" OnClick="btnagregar_Click" />
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <asp:DropDownList ID="cmbVehiculo" runat="server" class="form-control"></asp:DropDownList>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label11" runat="server" Text="Cantidad"></asp:Label>
+                                                            <asp:TextBox ID="txtcantidad" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label12" runat="server" Text="Precio"></asp:Label>
+                                                            <asp:TextBox ID="txtprecio" runat="server" class="form-control"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <asp:Button ID="btnagregar" runat="server" Text="Añadir" class="btn btn-primary btn-block" OnClick="btnagregar_Click" />
+                                                        <%--                                        <asp:Button ID="btnguardar" runat="server" Text="Guardar" class="btn btn-primary" />--%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <%-- FIN TARJETA DE CALCULAR GASTO DE SERVICIO --%>
+                                        </div>
+                                        <div class="col-6">
+                                            <%-- INICIO TARJETA DETALLE DE SERVICIO --%>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    Servicio número: 00000000000000000
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Honda Civic Type-R</h5>
+                                                    <p class="card-text">Operador asignado: </p>
+                                                    <p class="card-text">¿Desea añadir más vehiculos?</p>
+                                                    <asp:DropDownList ID="cmbVehiculoExtra" runat="server" class="form-control"></asp:DropDownList>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label10" runat="server" Text="Cantidad"></asp:Label>
+                                                            <asp:TextBox class="form-control" ID="txtCantidadExtra" runat="server"></asp:TextBox>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <asp:Label ID="Label13" runat="server" Text="Precio"></asp:Label>
+                                                            <asp:TextBox class="form-control" ID="txtPrecioExtra" runat="server"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                    <asp:Button class="btn btn-primary btn-block " ID="txtAgregarExtra" runat="server" Text="Añadir" />
+                                                    <p class="card-text">Agencia origen</p>
+                                                    <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control"></asp:DropDownList>
+                                                    <p class="card-text">Agencia destino</p>
+                                                    <asp:DropDownList ID="cmbDestino" runat="server" class="form-control"></asp:DropDownList>
+                                                    <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Guardar datos" />
+                                                </div>
+                                            </div>
+                                            <%-- FIN TARJETA DE DETALLE DE SERVICIO --%>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%-- FIN PANEL DE HOME --%>
+                            <%-- INICIO PANEL DE REGISTROS --%>
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Este div es test 2</div>
+                            <%-- FIN DE PANEL REGISTROS --%>
+                            <%-- INICIO PANEL DE ESTADISTICAS --%>
+                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Este div es test 3</div>
+                            <%-- FIN DE PANEL DE ESTADISTICAS --%>
+                            <%-- INICIO PANEL DE BASE DE DATOS --%>
+                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Este div es test 4</div>
+                            <%-- FIN DE PANEL DE BASE DE DATOS --%>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-              <div class="card rounded-0 p-0 shadow-sm">
-                <img
-                  src="https://user-images.githubusercontent.com/25878302/58369258-33f20900-7ef8-11e9-8ff3-b277cb7ed7b4.PNG"
-                  class="card-img-top rounded-0"
-                  alt="Angular pro sidebar"
-                />
-                <div class="card-body text-center">
-                  <h6 class="card-title">Angular Dashboard</h6>
-                  <a
-                    href="https://github.com/azouaoui-med/lightning-admin-angular"
-                    target="_blank"
-                    class="btn btn-primary btn-sm"
-                    >Github</a
-                  >
-                  <a
-                    href="https://azouaoui-med.github.io/lightning-admin-angular/demo/"
-                    target="_blank"
-                    class="btn btn-success btn-sm"
-                    >Demo</a
-                  >
-                  <hr />
-                  <a
-                    href="https://github.com/azouaoui-med/react-pro-sidebar"
-                    target="_blank"
-                  >
-                    <img
-                      alt="GitHub stars"
-                      src="https://img.shields.io/github/stars/azouaoui-med/lightning-admin-angular?style=social"
-                    />
-                  </a>
-                  <a
-                    href="https://github.com/azouaoui-med/react-pro-sidebar"
-                    target="_blank"
-                  >
-                    <img
-                      alt="GitHub stars"
-                      src="https://img.shields.io/github/forks/azouaoui-med/lightning-admin-angular?style=social"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-
-          <footer class="text-center">
-            <div class="mb-2">
-              <small>
-                © 2020 made with
-                <i class="fa fa-heart" style="color: red"></i> by -
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://azouaoui.netlify.com"
-                >
-                  Mohamed Azouaoui
-                </a>
-              </small>
-            </div>
-
-            <div>
-              <a href="https://github.com/azouaoui-med" target="_blank">
-                <img
-                  alt="GitHub followers"
-                  src="https://img.shields.io/github/followers/azouaoui-med?label=github&style=social"
-                />
-              </a>
-              <a href="https://twitter.com/azouaoui_med" target="_blank">
-                <img
-                  alt="Twitter Follow"
-                  src="https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social"
-                />
-              </a>
-            </div>
-          </footer>
         </div>
-      </main>
-      <!-- page-content" -->
-    </div>
-    <!-- page-wrapper -->
-
-    <!-- using online scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"
-    ></script>
-    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <!-- using local scripts -->
-    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-      <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
-
-    <script src="js/main.js"></script>
-  </body>
+    </form>
+</body>
 </html>

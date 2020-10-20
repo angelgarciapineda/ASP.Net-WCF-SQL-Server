@@ -13,5 +13,15 @@ namespace WebTrasladista_consumeWCF
         {
 
         }
+
+        protected void btnCargarOperador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnagregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
