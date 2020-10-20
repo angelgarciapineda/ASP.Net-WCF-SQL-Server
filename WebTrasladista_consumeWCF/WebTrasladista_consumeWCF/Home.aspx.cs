@@ -13,15 +13,45 @@ namespace WebTrasladista_consumeWCF
         {
 
         }
-
+        ServiceReference1.Service1Client uno = new ServiceReference1.Service1Client();
         protected void btnCargarOperador_Click(object sender, EventArgs e)
         {
+            string msj = "";
+            List<int> idspro = new List<int>();
+            List<string> profes = new List<string>();
+            profes = uno.ObtenOperador(ref msj, ref idspro);
+            cmbOperador.Items.Clear();
+            if (profes != null)
+            {
+                foreach (string p in profes)
+                {
+                    cmbOperador.Items.Add(p);
+                    cmbOperador.SelectedIndex = 0;
+                }
+            }
 
+            Session["idstemp"] = idspro;
         }
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
+            string msj = "";
+            try
+            {
+                int i = 0; //id de Gasto
 
+                double total = Convert.ToInt16(txtcantidad.Text) * Convert.ToDouble(txtprecio.Text);
+
+                i = uno.InsertaGasto(Convert.ToInt16(txtduracion.Text), txtrestri.Text, txtneces.Text,
+                    Convert.ToDouble(txtkm.Text), Convert.ToInt16(txttiempotrans.Text), Convert.ToDouble(txtcontroltrans.Text),
+                    Convert.ToDouble(txtsueldo.Text), Convert.ToDouble(txtsalario.Text), Convert.ToDouble(txtcostocaseta.Text),
+                    total, ref msj);
+
+                uno.InsertaGastoVehiculo(Convert.ToInt16(txtcantidad.Text), Convert.ToDouble(txtprecio.Text), 2, 1, ref msj);
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

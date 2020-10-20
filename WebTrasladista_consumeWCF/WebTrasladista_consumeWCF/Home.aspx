@@ -187,11 +187,17 @@
                                                         </div>
                                                     </div>
                                                     <asp:Button class="btn btn-primary btn-block " ID="txtAgregarExtra" runat="server" Text="Añadir" />
-                                                    <p class="card-text">Agencia origen</p>
-                                                    <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control"></asp:DropDownList>
-                                                    <p class="card-text">Agencia destino</p>
-                                                    <asp:DropDownList ID="cmbDestino" runat="server" class="form-control"></asp:DropDownList>
-                                                    <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Guardar datos" />
+                                                    <div class="form-group">
+                                                        <p class="card-text">Agencia origen</p>
+                                                        <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control"></asp:DropDownList>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <p class="card-text">Agencia destino</p>
+                                                        <asp:DropDownList ID="cmbDestino" runat="server" class="form-control"></asp:DropDownList>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Guardar datos" />
+                                                    </div>
                                                 </div>
                                             </div>
                                             <%-- FIN TARJETA DE DETALLE DE SERVICIO --%>
