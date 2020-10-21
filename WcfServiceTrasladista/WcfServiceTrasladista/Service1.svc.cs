@@ -32,9 +32,19 @@ namespace WcfServiceTrasladista
             objfinal.MuestraDatosConID(cad, cmb1);
         }
 
+        public List<string> ObtenAgencia(ref string msj, ref List<int> ids)
+        {
+            return objfinal.DevuelveIDAgencia(ref msj, ref ids);
+        }
+
         public List<string> ObtenOperador(ref string msj, ref List<int> ids)
         {
             return objfinal.DevuelveIDOperador(ref msj, ref ids);
+        }
+
+        public List<string> ObtenVehiculo(ref string msj, ref List<int> ids)
+        {
+            return objfinal.DevuelveIDVehiculo(ref msj, ref ids);
         }
     }
 }

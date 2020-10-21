@@ -18,6 +18,12 @@ namespace WcfServiceTrasladista
         List<string> ObtenOperador(ref string msj, ref List<int> ids);
 
         [OperationContract]
+        List<string> ObtenVehiculo(ref string msj, ref List<int> ids);
+
+        [OperationContract]
+        List<string> ObtenAgencia(ref string msj, ref List<int> ids);
+
+        [OperationContract]
         void MuestraDatos(List<string> cad, DropDownList cmb1);
 
         [OperationContract]

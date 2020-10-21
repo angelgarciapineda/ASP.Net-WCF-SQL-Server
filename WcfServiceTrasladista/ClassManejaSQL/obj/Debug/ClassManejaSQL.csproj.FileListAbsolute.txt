@@ -9,3 +9,4 @@ C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasla
 C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\ClassManejaSQL\obj\Debug\ClassManejaSQL.csproj.CoreCompileInputs.cache
 C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\ClassManejaSQL\obj\Debug\ClassManejaSQL.dll
 C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\ClassManejaSQL\obj\Debug\ClassManejaSQL.pdb
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\ClassManejaSQL\obj\Debug\ClassManejaSQL.csprojAssemblyReference.cache

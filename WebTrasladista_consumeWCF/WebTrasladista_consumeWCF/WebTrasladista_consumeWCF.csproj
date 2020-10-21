@@ -143,6 +143,12 @@
     <Content Include="Connected Services\ServiceReference1\WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference1\WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
