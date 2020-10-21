@@ -54,6 +54,20 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenOperador", ReplyAction="http://tempuri.org/IService1/ObtenOperadorResponse")]
         System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.ObtenOperadorResponse> ObtenOperadorAsync(WebTrasladista_consumeWCF.ServiceReference1.ObtenOperadorRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenVehiculo", ReplyAction="http://tempuri.org/IService1/ObtenVehiculoResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoResponse ObtenVehiculo(WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenVehiculo", ReplyAction="http://tempuri.org/IService1/ObtenVehiculoResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoResponse> ObtenVehiculoAsync(WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenAgencia", ReplyAction="http://tempuri.org/IService1/ObtenAgenciaResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaResponse ObtenAgencia(WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenAgencia", ReplyAction="http://tempuri.org/IService1/ObtenAgenciaResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaResponse> ObtenAgenciaAsync(WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MuestraDatos", ReplyAction="http://tempuri.org/IService1/MuestraDatosResponse")]
         void MuestraDatos(System.Collections.Generic.List<string> cad, System.Web.UI.WebControls.DropDownList cmb1);
         
@@ -114,6 +128,94 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         
         public ObtenOperadorResponse(System.Collections.Generic.List<string> ObtenOperadorResult, string msj, System.Collections.Generic.List<int> ids) {
             this.ObtenOperadorResult = ObtenOperadorResult;
+            this.msj = msj;
+            this.ids = ids;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenVehiculo", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ObtenVehiculoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string msj;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.Collections.Generic.List<int> ids;
+        
+        public ObtenVehiculoRequest() {
+        }
+        
+        public ObtenVehiculoRequest(string msj, System.Collections.Generic.List<int> ids) {
+            this.msj = msj;
+            this.ids = ids;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenVehiculoResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ObtenVehiculoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<string> ObtenVehiculoResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string msj;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public System.Collections.Generic.List<int> ids;
+        
+        public ObtenVehiculoResponse() {
+        }
+        
+        public ObtenVehiculoResponse(System.Collections.Generic.List<string> ObtenVehiculoResult, string msj, System.Collections.Generic.List<int> ids) {
+            this.ObtenVehiculoResult = ObtenVehiculoResult;
+            this.msj = msj;
+            this.ids = ids;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenAgencia", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ObtenAgenciaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string msj;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.Collections.Generic.List<int> ids;
+        
+        public ObtenAgenciaRequest() {
+        }
+        
+        public ObtenAgenciaRequest(string msj, System.Collections.Generic.List<int> ids) {
+            this.msj = msj;
+            this.ids = ids;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenAgenciaResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ObtenAgenciaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<string> ObtenAgenciaResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string msj;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public System.Collections.Generic.List<int> ids;
+        
+        public ObtenAgenciaResponse() {
+        }
+        
+        public ObtenAgenciaResponse(System.Collections.Generic.List<string> ObtenAgenciaResult, string msj, System.Collections.Generic.List<int> ids) {
+            this.ObtenAgenciaResult = ObtenAgenciaResult;
             this.msj = msj;
             this.ids = ids;
         }
@@ -287,6 +389,44 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.ObtenOperadorResponse> ObtenOperadorAsync(WebTrasladista_consumeWCF.ServiceReference1.ObtenOperadorRequest request) {
             return base.Channel.ObtenOperadorAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.ObtenVehiculo(WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoRequest request) {
+            return base.Channel.ObtenVehiculo(request);
+        }
+        
+        public System.Collections.Generic.List<string> ObtenVehiculo(ref string msj, ref System.Collections.Generic.List<int> ids) {
+            WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoRequest();
+            inValue.msj = msj;
+            inValue.ids = ids;
+            WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).ObtenVehiculo(inValue);
+            msj = retVal.msj;
+            ids = retVal.ids;
+            return retVal.ObtenVehiculoResult;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoResponse> ObtenVehiculoAsync(WebTrasladista_consumeWCF.ServiceReference1.ObtenVehiculoRequest request) {
+            return base.Channel.ObtenVehiculoAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.ObtenAgencia(WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaRequest request) {
+            return base.Channel.ObtenAgencia(request);
+        }
+        
+        public System.Collections.Generic.List<string> ObtenAgencia(ref string msj, ref System.Collections.Generic.List<int> ids) {
+            WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaRequest();
+            inValue.msj = msj;
+            inValue.ids = ids;
+            WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).ObtenAgencia(inValue);
+            msj = retVal.msj;
+            ids = retVal.ids;
+            return retVal.ObtenAgenciaResult;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaResponse> ObtenAgenciaAsync(WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaRequest request) {
+            return base.Channel.ObtenAgenciaAsync(request);
         }
         
         public void MuestraDatos(System.Collections.Generic.List<string> cad, System.Web.UI.WebControls.DropDownList cmb1) {

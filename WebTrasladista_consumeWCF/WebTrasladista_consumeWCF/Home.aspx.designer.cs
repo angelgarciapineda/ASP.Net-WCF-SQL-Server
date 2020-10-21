@@ -22,6 +22,15 @@ namespace WebTrasladista_consumeWCF {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control lbRespuesta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbRespuesta;
+        
+        /// <summary>
         /// Control btnCargarOperador.
         /// </summary>
         /// <remarks>
@@ -202,13 +211,13 @@ namespace WebTrasladista_consumeWCF {
         protected global::System.Web.UI.WebControls.TextBox txtneces;
         
         /// <summary>
-        /// Control Button1.
+        /// Control btnCargaVehiculo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnCargaVehiculo;
         
         /// <summary>
         /// Control cmbVehiculo.
@@ -265,6 +274,15 @@ namespace WebTrasladista_consumeWCF {
         protected global::System.Web.UI.WebControls.Button btnagregar;
         
         /// <summary>
+        /// Control lbGastoServicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbGastoServicio;
+        
+        /// <summary>
         /// Control cmbVehiculoExtra.
         /// </summary>
         /// <remarks>
@@ -310,13 +328,13 @@ namespace WebTrasladista_consumeWCF {
         protected global::System.Web.UI.WebControls.TextBox txtPrecioExtra;
         
         /// <summary>
-        /// Control txtAgregarExtra.
+        /// Control btnAgregarExtra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txtAgregarExtra;
+        protected global::System.Web.UI.WebControls.Button btnAgregarExtra;
         
         /// <summary>
         /// Control cmbOrigen.

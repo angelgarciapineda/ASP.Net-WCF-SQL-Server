@@ -19,11 +19,45 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ObtenVehiculo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="msj" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q4:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenVehiculoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenVehiculoResult" nillable="true" type="q5:ArrayOfstring" />
+        <xs:element minOccurs="0" name="msj" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q6:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenAgencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="msj" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q7:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenAgenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenAgenciaResult" nillable="true" type="q8:ArrayOfstring" />
+        <xs:element minOccurs="0" name="msj" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q9:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="MuestraDatos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="cad" nillable="true" type="q4:ArrayOfstring" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Web.UI.WebControls" minOccurs="0" name="cmb1" nillable="true" type="q5:DropDownList" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="cad" nillable="true" type="q10:ArrayOfstring" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System.Web.UI.WebControls" minOccurs="0" name="cmb1" nillable="true" type="q11:DropDownList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -61,7 +61,67 @@ namespace ClassManejaSQL
 
             return misOperadores;
         }
+        /*Método para obtener los IDS de los vehiculos*/
+        public List<string> DevuelveIDVehiculo(ref string mensaje, ref List<int> ids)
+        {
+            List<string> misVehiculos = new List<string>();
+            ids = new List<int>();
+            SqlConnection abierta = null;
+            SqlDataReader tablita = null;
+            abierta = capa1.AbrirConexion(ref mensaje);
+            tablita = capa1.ConsultaDataReader(ref abierta, "select idVehiculo, CONCAT(Marca,',',Modelo,',',Color,',',Tipo) from Vehiculo;", ref mensaje);
 
+            if (tablita != null)
+            {
+
+                while (tablita.Read())
+                {
+                    ids.Add((int)tablita[0]);
+                    misVehiculos.Add((string)tablita[1]);
+                }
+                abierta.Close();
+                abierta.Dispose();
+            }
+            else
+            {
+                mensaje = mensaje + "\n No hay datos";
+                misVehiculos = null;
+                ids = null;
+            }
+
+            return misVehiculos;
+        }
+        /*Método para obtener los IDS de las agencias*/
+        public List<string> DevuelveIDAgencia(ref string mensaje, ref List<int> ids)
+        {
+            List<string> misAgencias = new List<string>();
+            ids = new List<int>();
+            SqlConnection abierta = null;
+            SqlDataReader tablita = null;
+            abierta = capa1.AbrirConexion(ref mensaje);
+            tablita = capa1.ConsultaDataReader(ref abierta, "select idAgencia, Nombre_sucursal from Agencia;", ref mensaje);
+
+            if (tablita != null)
+            {
+
+                while (tablita.Read())
+                {
+                    ids.Add((int)tablita[0]);
+                    misAgencias.Add((string)tablita[1]);
+                }
+                abierta.Close();
+                abierta.Dispose();
+            }
+            else
+            {
+                mensaje = mensaje + "\n No hay datos";
+                misAgencias = null;
+                ids = null;
+            }
+
+            return misAgencias;
+        }
+        /*Método para insertar en tabla Gasto_servicio*/
         public int InsertToGasto_servicio(int duracion, string restriccion, string necesidad, double km,
             int tiempo_trans, double costo_trans, double sueldo,
             double salario, double costo_casetas, double total, ref string mensaje)
@@ -104,6 +164,7 @@ namespace ClassManejaSQL
             return idGasto;
 
         }
+        /*Método para insertar en tabla GastoServicio_Vehiculo*/
         public void InsertToGastoServicio_Vehiculo(int cantidad, double precio, int fk_gasto, int fk_vehiculo, ref string mensaje)
         {
             try
@@ -113,11 +174,11 @@ namespace ClassManejaSQL
                     "values (@CREADO_EL,@MODIFICADO_EL,@CANTIDAD,@PRECIO_UNIDAD,@FK_GASTO,@FK_VEHICULO) ";
                 SqlParameter[] param = new SqlParameter[6];
 
-                param[0] = new SqlParameter("@CREADO_EL", SqlDbType.DateTime);
+                param[0] = new SqlParameter("@CREADO_EL", SqlDbType.VarChar);
                 param[0].Direction = System.Data.ParameterDirection.Input;
                 param[0].Value = dt.ToString("MM/dd/yyyy HH:mm:ss");
 
-                param[1] = new SqlParameter("@MODIFICADO_EL", SqlDbType.DateTime);
+                param[1] = new SqlParameter("@MODIFICADO_EL", SqlDbType.VarChar);
                 param[1].Direction = System.Data.ParameterDirection.Input;
                 param[1].Value = dt.ToString("MM/dd/yyyy HH:mm:ss");
 
@@ -148,79 +209,5 @@ namespace ClassManejaSQL
                 mensaje = "Mensaje : " + c.Message;
             }
         }
-        /*public void InsertIntoGasto_servicio(int duracion, string restriccion, string necesidad, float km,
-            int tiempo_trans, float costo_trans, float sueldo,
-            float salario, float costo_casetas, ref string mensaje)
-        {
-            try
-            {
-                DateTime dt = DateTime.Now;
-                string consulta =
-                    "insert into Gasto_servicio " +
-                    "(Creado_el,Modificado_el,Duracion,Restriccion,Necesidades_especificas,Kilometros,Tiempo_transporte,Costo_transporte,Sueldo,Salario,Costo_casetas,Total) " +
-                    "values (@CREADO_EL,@MODIFICADO_EL,@DURACION,@RESTRICCION,@NECESIDADES,@KM,@TIEMPO_TRANS,@COSTO_TRANS,@SUELDO,@SALARIO,@COSTO_CASETAS,@TOTAL)";
-
-                SqlParameter[] param = new SqlParameter[12];
-
-                param[0] = new SqlParameter("@CREADO_EL", SqlDbType.DateTime);
-                param[0].Direction = System.Data.ParameterDirection.Input;
-                param[0].Value = dt.ToLongDateString();
-
-                param[1] = new SqlParameter("@MODIFICADO_EL", SqlDbType.Int);
-                param[1].Direction = System.Data.ParameterDirection.Input;
-                param[1].Value = dt;
-
-                param[2] = new SqlParameter("@DURACION", SqlDbType.Int);
-                param[2].Direction = System.Data.ParameterDirection.Input;
-                param[2].Value = duracion;
-
-                param[3] = new SqlParameter("@RESTRICCION", SqlDbType.VarChar);
-                param[3].Direction = System.Data.ParameterDirection.Input;
-                param[3].Value = restriccion;
-
-                param[4] = new SqlParameter("@NECESIDADES", SqlDbType.VarChar);
-                param[4].Direction = System.Data.ParameterDirection.Input;
-                param[4].Value = necesidad;
-
-                param[5] = new SqlParameter("@KM", SqlDbType.Float);
-                param[5].Direction = System.Data.ParameterDirection.Input;
-                param[5].Value = km;
-
-                param[6] = new SqlParameter("@TIEMPO_TRANS", SqlDbType.Int);
-                param[6].Direction = System.Data.ParameterDirection.Input;
-                param[6].Value = tiempo_trans;
-
-                param[7] = new SqlParameter("@COSTO_TRANS", SqlDbType.Float);
-                param[7].Direction = System.Data.ParameterDirection.Input;
-                param[7].Value = costo_trans;
-
-                param[8] = new SqlParameter("@SUELDO", SqlDbType.Float);
-                param[8].Direction = System.Data.ParameterDirection.Input;
-                param[8].Value = sueldo;
-
-                param[9] = new SqlParameter("@SALARIO", SqlDbType.Float);
-                param[9].Direction = System.Data.ParameterDirection.Input;
-                param[9].Value = salario;
-
-                param[10] = new SqlParameter("@COSTO_CASETAS", SqlDbType.Float);
-                param[10].Direction = System.Data.ParameterDirection.Input;
-                param[10].Value = costo_casetas;
-
-                param[11] = new SqlParameter("@TOTAL", SqlDbType.Float);
-                param[11].Direction = System.Data.ParameterDirection.Input;
-                param[11].Value = 0;
-
-                SqlConnection conexion;
-                conexion = capa1.AbrirConexion(ref mensaje);
-
-                SqlDataReader temp = null;
-                temp = capa1.ConsultaDataReaderConParametros(ref conexion, consulta, param, ref mensaje);
-            }
-            catch (Exception c)
-            {
-                mensaje = "Error" + c.Message;
-            }
-        }*/
-
     }
 }

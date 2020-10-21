@@ -80,6 +80,9 @@
                             <%-- INICIO PANEL DE HOME --%>
                             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                 <div class="card-body">
+                                    <div class="alert alert-dark" role="alert">
+                                        <asp:Label ID="lbRespuesta" runat="server" Text="Label"></asp:Label>
+                                    </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <%-- TARJETA DE CALCULAR GASTO DE SERVICIO --%>
@@ -141,7 +144,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <asp:Button ID="Button1" runat="server" Text="Vehiculos disponibles" class="btn btn-block btn-primary" OnClick="btnagregar_Click" />
+                                                            <asp:Button ID="btnCargaVehiculo" runat="server" Text="Vehiculos disponibles" class="btn btn-block btn-primary" OnClick="btnCargaVehiculo_Click" />
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <asp:DropDownList ID="cmbVehiculo" runat="server" class="form-control"></asp:DropDownList>
@@ -169,7 +172,7 @@
                                             <%-- INICIO TARJETA DETALLE DE SERVICIO --%>
                                             <div class="card">
                                                 <div class="card-header">
-                                                    Servicio número: 00000000000000000
+                                                    <asp:Label ID="lbGastoServicio" runat="server" Text="Gasto de servicio: "></asp:Label>
                                                 </div>
                                                 <div class="card-body">
                                                     <h5 class="card-title">Honda Civic Type-R</h5>
@@ -186,10 +189,10 @@
                                                             <asp:TextBox class="form-control" ID="txtPrecioExtra" runat="server"></asp:TextBox>
                                                         </div>
                                                     </div>
-                                                    <asp:Button class="btn btn-primary btn-block " ID="txtAgregarExtra" runat="server" Text="Añadir" />
-                                                    <div class="form-group">
+                                                    
+                                                    <div class="form-group"><asp:Button class="btn btn-primary btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" OnClick="btnAgregarExtra_Click" />
                                                         <p class="card-text">Agencia origen</p>
-                                                        <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control"></asp:DropDownList>
+                                                        <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control" OnSelectedIndexChanged="cmbOrigen_SelectedIndexChanged"></asp:DropDownList>
                                                     </div>
                                                     <div class="form-group">
                                                         <p class="card-text">Agencia destino</p>

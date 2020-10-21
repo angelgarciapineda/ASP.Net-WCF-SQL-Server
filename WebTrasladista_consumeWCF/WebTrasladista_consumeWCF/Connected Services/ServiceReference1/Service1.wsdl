@@ -20,6 +20,18 @@
   <wsdl:message name="IService1_ObtenOperador_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenOperadorResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ObtenVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenAgencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenAgencia" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenAgencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenAgenciaResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_MuestraDatos_InputMessage">
     <wsdl:part name="parameters" element="tns:MuestraDatos" />
   </wsdl:message>
@@ -43,6 +55,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenOperador" message="tns:IService1_ObtenOperador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenOperadorResponse" message="tns:IService1_ObtenOperador_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenVehiculo" message="tns:IService1_ObtenVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenVehiculoResponse" message="tns:IService1_ObtenVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenAgencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenAgencia" message="tns:IService1_ObtenAgencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenAgenciaResponse" message="tns:IService1_ObtenAgencia_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="MuestraDatos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/MuestraDatos" message="tns:IService1_MuestraDatos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/MuestraDatosResponse" message="tns:IService1_MuestraDatos_OutputMessage" />
@@ -60,6 +80,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ObtenOperador">
       <soap:operation soapAction="http://tempuri.org/IService1/ObtenOperador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenAgencia">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenAgencia" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
