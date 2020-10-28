@@ -355,12 +355,21 @@ namespace WebTrasladista_consumeWCF {
         protected global::System.Web.UI.WebControls.DropDownList cmbDestino;
         
         /// <summary>
-        /// Control Button3.
+        /// Control cmbTipoServicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.DropDownList cmbTipoServicio;
+        
+        /// <summary>
+        /// Control btnGuardarServicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarServicio;
     }
 }

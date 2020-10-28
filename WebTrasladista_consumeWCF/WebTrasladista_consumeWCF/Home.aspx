@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <title></title>
@@ -189,17 +189,21 @@
                                                             <asp:TextBox class="form-control" ID="txtPrecioExtra" runat="server"></asp:TextBox>
                                                         </div>
                                                     </div>
-                                                    
-                                                    <div class="form-group"><asp:Button class="btn btn-primary btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" OnClick="btnAgregarExtra_Click" />
+
+                                                    <div class="form-group">
+                                                        <asp:Button class="btn btn-primary btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" OnClick="btnAgregarExtra_Click" />
                                                         <p class="card-text">Agencia origen</p>
-                                                        <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control" OnSelectedIndexChanged="cmbOrigen_SelectedIndexChanged"></asp:DropDownList>
+                                                        <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control"></asp:DropDownList>
                                                     </div>
                                                     <div class="form-group">
                                                         <p class="card-text">Agencia destino</p>
                                                         <asp:DropDownList ID="cmbDestino" runat="server" class="form-control"></asp:DropDownList>
+                                                        <p class="card-text">Tipo de servicio</p>
+                                                        <asp:DropDownList ID="cmbTipoServicio" runat="server" class="form-control"></asp:DropDownList>
+
                                                     </div>
                                                     <div class="form-group">
-                                                        <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Guardar datos" />
+                                                        <asp:Button class="btn btn-primary" ID="btnGuardarServicio" runat="server" Text="Guardar datos" OnClick="btnGuardarServicio_Click" />
                                                     </div>
                                                 </div>
                                             </div>

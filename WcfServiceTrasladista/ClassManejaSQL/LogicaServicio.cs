@@ -30,7 +30,44 @@ namespace ClassManejaSQL
                 }
             }
         }
+        public Boolean ValidaLogin(ref string mensaje, String email, String pass, ref Boolean valida)
+        {
+            SqlConnection abierta = null;
+            SqlDataReader tablita = null;
+            abierta = capa1.AbrirConexion(ref mensaje);
+            String consulta = "Select Email, Contrasenia from Usuario where Email='" + email + "' and Contrasenia='" + pass + "';";
+            tablita = capa1.ConsultaDataReader(ref abierta, consulta, ref mensaje);
 
+            if (tablita != null)
+            {
+                if (tablita.Read())
+                {
+                    if ((email == tablita[0].ToString()) && (pass == tablita[1].ToString()))
+                    {
+                        valida = true;
+                    }
+                    else
+                    {
+                        valida = false;
+                        abierta.Close();
+                        abierta.Dispose();
+                    }
+                }
+                else
+                {
+                    valida = false;
+                    abierta.Close();
+                    abierta.Dispose();
+                }
+            }
+            else
+            {
+                valida = false;
+                abierta.Close();
+                abierta.Dispose();
+            }
+            return valida;
+        }
         /*Método para obtener los IDs de los operadores*/
         public List<string> DevuelveIDOperador(ref string mensaje, ref List<int> ids)
         {
@@ -198,6 +235,54 @@ namespace ClassManejaSQL
                 param[5].Direction = System.Data.ParameterDirection.Input;
                 param[5].Value = fk_vehiculo;
 
+
+                SqlConnection conex = null;
+                conex = capa1.AbrirConexion(ref mensaje);
+                SqlDataReader temp = null;
+                temp = capa1.ConsultaDataReaderConParametros(ref conex, consulta, param, ref mensaje);
+            }
+            catch (Exception c)
+            {
+                mensaje = "Mensaje : " + c.Message;
+            }
+        }
+        /*Método para insertar en tabla SERVICIO*/
+        public void InsertToServicio(string Tipo_servicio, int fk_usuario, int fk_gastoservicio, int fk_agenciaOrigen, int fk_agenciaDestino, ref string mensaje)
+        {
+            try
+            {
+                DateTime dt = DateTime.Now;
+                String consulta = "insert into Servicio " + "(Creado_el,Modificado_el,Tipo_servicio,fk_usuario,fk_gastoservicio,fk_agenciaOrigen,fk_agenciaDestino) " +
+                    "values (@CREADO_EL,@MODIFICADO_EL,@TIPO,@FK_USUARIO,@FK_GASTO,@FK_AGENCIAO,@FK_AGENCIAD) ";
+                SqlParameter[] param = new SqlParameter[7];
+
+                param[0] = new SqlParameter("@CREADO_EL", SqlDbType.VarChar);
+                param[0].Direction = System.Data.ParameterDirection.Input;
+                param[0].Value = dt.ToString("MM/dd/yyyy HH:mm:ss");
+
+                param[1] = new SqlParameter("@MODIFICADO_EL", SqlDbType.VarChar);
+                param[1].Direction = System.Data.ParameterDirection.Input;
+                param[1].Value = dt.ToString("MM/dd/yyyy HH:mm:ss");
+
+                param[2] = new SqlParameter("@TIPO", SqlDbType.VarChar);
+                param[2].Direction = System.Data.ParameterDirection.Input;
+                param[2].Value = Tipo_servicio;
+
+                param[3] = new SqlParameter("@FK_USUARIO", SqlDbType.Int);
+                param[3].Direction = System.Data.ParameterDirection.Input;
+                param[3].Value = fk_usuario;
+
+                param[4] = new SqlParameter("@FK_GASTO", SqlDbType.Int);
+                param[4].Direction = System.Data.ParameterDirection.Input;
+                param[4].Value = fk_gastoservicio;
+
+                param[5] = new SqlParameter("@FK_AGENCIAO", SqlDbType.Int);
+                param[5].Direction = System.Data.ParameterDirection.Input;
+                param[5].Value = fk_agenciaOrigen;
+
+                param[6] = new SqlParameter("@FK_AGENCIAD", SqlDbType.Int);
+                param[6].Direction = System.Data.ParameterDirection.Input;
+                param[6].Value = fk_agenciaDestino;
 
                 SqlConnection conex = null;
                 conex = capa1.AbrirConexion(ref mensaje);

@@ -47,6 +47,13 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.LoginResponse Login(WebTrasladista_consumeWCF.ServiceReference1.LoginRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.LoginResponse> LoginAsync(WebTrasladista_consumeWCF.ServiceReference1.LoginRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenOperador", ReplyAction="http://tempuri.org/IService1/ObtenOperadorResponse")]
         WebTrasladista_consumeWCF.ServiceReference1.ObtenOperadorResponse ObtenOperador(WebTrasladista_consumeWCF.ServiceReference1.ObtenOperadorRequest request);
         
@@ -87,6 +94,65 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaGastoVehiculo", ReplyAction="http://tempuri.org/IService1/InsertaGastoVehiculoResponse")]
         System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoResponse> InsertaGastoVehiculoAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaServicio", ReplyAction="http://tempuri.org/IService1/InsertaServicioResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse InsertaServicio(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaServicio", ReplyAction="http://tempuri.org/IService1/InsertaServicioResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse> InsertaServicioAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Login", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class LoginRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string msj;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string password;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public bool valida;
+        
+        public LoginRequest() {
+        }
+        
+        public LoginRequest(string msj, string email, string password, bool valida) {
+            this.msj = msj;
+            this.email = email;
+            this.password = password;
+            this.valida = valida;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="LoginResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class LoginResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool LoginResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string msj;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public bool valida;
+        
+        public LoginResponse() {
+        }
+        
+        public LoginResponse(bool LoginResult, string msj, bool valida) {
+            this.LoginResult = LoginResult;
+            this.msj = msj;
+            this.valida = valida;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -345,6 +411,58 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaServicio", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaServicioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string tipo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public int fkuusuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public int fkgasto;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public int fkagenciaorigen;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public int fkagenciadestino;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string mensaje;
+        
+        public InsertaServicioRequest() {
+        }
+        
+        public InsertaServicioRequest(string tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, string mensaje) {
+            this.tipo = tipo;
+            this.fkuusuario = fkuusuario;
+            this.fkgasto = fkgasto;
+            this.fkagenciaorigen = fkagenciaorigen;
+            this.fkagenciadestino = fkagenciadestino;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaServicioResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaServicioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string mensaje;
+        
+        public InsertaServicioResponse() {
+        }
+        
+        public InsertaServicioResponse(string mensaje) {
+            this.mensaje = mensaje;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : WebTrasladista_consumeWCF.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
     }
@@ -370,6 +488,27 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.LoginResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.Login(WebTrasladista_consumeWCF.ServiceReference1.LoginRequest request) {
+            return base.Channel.Login(request);
+        }
+        
+        public bool Login(ref string msj, string email, string password, ref bool valida) {
+            WebTrasladista_consumeWCF.ServiceReference1.LoginRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.LoginRequest();
+            inValue.msj = msj;
+            inValue.email = email;
+            inValue.password = password;
+            inValue.valida = valida;
+            WebTrasladista_consumeWCF.ServiceReference1.LoginResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).Login(inValue);
+            msj = retVal.msj;
+            valida = retVal.valida;
+            return retVal.LoginResult;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.LoginResponse> LoginAsync(WebTrasladista_consumeWCF.ServiceReference1.LoginRequest request) {
+            return base.Channel.LoginAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -482,6 +621,27 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoResponse> InsertaGastoVehiculoAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoRequest request) {
             return base.Channel.InsertaGastoVehiculoAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.InsertaServicio(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request) {
+            return base.Channel.InsertaServicio(request);
+        }
+        
+        public void InsertaServicio(string tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje) {
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest();
+            inValue.tipo = tipo;
+            inValue.fkuusuario = fkuusuario;
+            inValue.fkgasto = fkgasto;
+            inValue.fkagenciaorigen = fkagenciaorigen;
+            inValue.fkagenciadestino = fkagenciadestino;
+            inValue.mensaje = mensaje;
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).InsertaServicio(inValue);
+            mensaje = retVal.mensaje;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse> InsertaServicioAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request) {
+            return base.Channel.InsertaServicioAsync(request);
         }
     }
 }

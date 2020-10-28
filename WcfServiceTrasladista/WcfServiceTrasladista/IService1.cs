@@ -15,6 +15,9 @@ namespace WcfServiceTrasladista
     public interface IService1
     {
         [OperationContract]
+        Boolean Login(ref string msj, String email, String password, ref Boolean valida);
+
+        [OperationContract]
         List<string> ObtenOperador(ref string msj, ref List<int> ids);
 
         [OperationContract]
@@ -34,6 +37,8 @@ namespace WcfServiceTrasladista
         [OperationContract]
         void InsertaGastoVehiculo(int cantidad, double precio, int fkgasto, int fkvehiculo, ref string mensaje);
 
+        [OperationContract]
+        void InsertaServicio(String tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje);
         // TODO: agregue aquí sus operaciones de servicio
 
     }

@@ -27,6 +27,16 @@ namespace WcfServiceTrasladista
             objfinal.InsertToGastoServicio_Vehiculo(cantidad, precio, fkgasto, fkvehiculo, ref mensaje);
         }
 
+        public void InsertaServicio(string tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje)
+        {
+            objfinal.InsertToServicio(tipo, fkuusuario, fkgasto, fkagenciadestino, fkagenciadestino, ref mensaje);
+        }
+
+        public bool Login(ref string msj, string email, string password, ref bool valida)
+        {
+            return objfinal.ValidaLogin(ref msj, email, password, ref valida);
+        }
+
         public void MuestraDatos(List<string> cad, DropDownList cmb1)
         {
             objfinal.MuestraDatosConID(cad, cmb1);

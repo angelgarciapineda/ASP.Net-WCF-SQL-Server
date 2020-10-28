@@ -18,8 +18,8 @@ namespace WebTrasladista_consumeWCF
                 List<int> idsagencias = new List<int>();
                 List<string> agencias = new List<string>();
                 agencias = uno.ObtenAgencia(ref msj, ref idsagencias);
-                cmbVehiculo.Items.Clear();
-                cmbVehiculoExtra.Items.Clear();
+                cmbDestino.Items.Clear();
+                cmbOrigen.Items.Clear();
                 if (agencias != null)
                 {
                     foreach (string a in agencias)
@@ -32,6 +32,9 @@ namespace WebTrasladista_consumeWCF
                 }
                 lbRespuesta.Text = msj;
                 Session["idsAgencias"] = idsagencias;
+
+                cmbTipoServicio.Items.Add("Sencillo");
+                cmbTipoServicio.Items.Add("Redondo");
             }
             catch (Exception m)
             {
@@ -46,6 +49,7 @@ namespace WebTrasladista_consumeWCF
             List<string> profes = new List<string>();
             profes = uno.ObtenOperador(ref msj, ref idspro);
             cmbOperador.Items.Clear();
+
             if (profes != null)
             {
                 foreach (string p in profes)
@@ -55,7 +59,7 @@ namespace WebTrasladista_consumeWCF
                 }
             }
 
-            Session["idsProfes"] = idspro;
+            Session["idsOpera"] = idspro;
         }
         protected void btnCargaVehiculo_Click(object sender, EventArgs e)
         {
@@ -75,7 +79,6 @@ namespace WebTrasladista_consumeWCF
                     cmbVehiculoExtra.SelectedIndex = 0;
                 }
             }
-
             Session["idsVehiculos"] = idsvehiculos;
         }
         protected void btnagregar_Click(object sender, EventArgs e)
@@ -97,6 +100,8 @@ namespace WebTrasladista_consumeWCF
                 //Inserta a tabla GastoServicio_Vehiculo
                 uno.InsertaGastoVehiculo(Convert.ToInt16(txtcantidad.Text), Convert.ToDouble(txtprecio.Text), i, temp[cmbVehiculo.SelectedIndex], ref msj);
                 lbRespuesta.Text = msj;
+
+                Session["idGasto"] = i;
             }
             catch (Exception m)
             {
@@ -106,13 +111,43 @@ namespace WebTrasladista_consumeWCF
 
         protected void btnAgregarExtra_Click(object sender, EventArgs e)
         {
-            string mensaje = "";
-
+            try
+            {
+                List<int> temp = new List<int>();
+                temp = (List<int>)Session["idsVehiculos"];
+                int i = (int)Session["idGasto"];
+                String msj = "";
+                //Inserta a tabla GastoServicio_Vehiculo
+                uno.InsertaGastoVehiculo(Convert.ToInt16(txtCantidadExtra.Text), Convert.ToDouble(txtPrecioExtra.Text), i, temp[cmbVehiculoExtra.SelectedIndex], ref msj);
+                lbRespuesta.Text = msj;
+            }
+            catch (Exception c)
+            {
+                lbRespuesta.Text = c.Message;
+            }
         }
 
-        protected void cmbOrigen_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnGuardarServicio_Click(object sender, EventArgs e)
         {
-            cmbDestino.Items.RemoveAt(cmbOrigen.SelectedIndex);
+            try
+            {
+                List<int> tempOperador = new List<int>();
+                tempOperador = (List<int>)Session["idsOpera"];
+                int idgasto = (int)Session["idGasto"];
+
+                List<int> tempAgencias = new List<int>();
+                tempAgencias = (List<int>)Session["idsAgencias"];
+
+
+                String mensaje = "";
+                uno.InsertaServicio(cmbTipoServicio.SelectedItem.ToString(), tempOperador[cmbOperador.SelectedIndex], idgasto, tempAgencias[cmbOrigen.SelectedIndex], tempAgencias[cmbDestino.SelectedIndex], ref mensaje);
+                lbRespuesta.Text = mensaje;
+
+            }
+            catch (Exception m)
+            {
+                lbRespuesta.Text = m.Message;
+            }
         }
     }
 }

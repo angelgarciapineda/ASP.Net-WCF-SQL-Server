@@ -14,6 +14,12 @@
       <xsd:import schemaLocation="http://localhost:49619/Service1.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ObtenOperador_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenOperador" />
   </wsdl:message>
@@ -50,7 +56,17 @@
   <wsdl:message name="IService1_InsertaGastoVehiculo_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertaGastoVehiculoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_InsertaServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaServicio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertaServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaServicioResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Login" message="tns:IService1_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginResponse" message="tns:IService1_Login_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ObtenOperador">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenOperador" message="tns:IService1_ObtenOperador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenOperadorResponse" message="tns:IService1_ObtenOperador_OutputMessage" />
@@ -75,9 +91,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaGastoVehiculo" message="tns:IService1_InsertaGastoVehiculo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaGastoVehiculoResponse" message="tns:IService1_InsertaGastoVehiculo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="InsertaServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaServicio" message="tns:IService1_InsertaServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaServicioResponse" message="tns:IService1_InsertaServicio_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IService1/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ObtenOperador">
       <soap:operation soapAction="http://tempuri.org/IService1/ObtenOperador" style="document" />
       <wsdl:input>
@@ -125,6 +154,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertaGastoVehiculo">
       <soap:operation soapAction="http://tempuri.org/IService1/InsertaGastoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaServicio">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertaServicio" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
