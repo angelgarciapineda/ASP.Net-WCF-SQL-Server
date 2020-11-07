@@ -9,39 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace WebTrasladista_consumeWCF.ServiceReference1 {
-    using System;
-    using System.Runtime.Serialization;
     
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DateTimeFormatFlags", Namespace="http://schemas.datacontract.org/2004/07/System.Globalization")]
-    public enum DateTimeFormatFlags : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UseGenitiveMonth = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UseLeapYearMonth = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UseSpacesInMonthNames = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UseHebrewRule = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UseSpacesInDayNames = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UseDigitPrefixInTokens = 32,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NotInitialized = -1,
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
@@ -75,11 +43,12 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenAgencia", ReplyAction="http://tempuri.org/IService1/ObtenAgenciaResponse")]
         System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaResponse> ObtenAgenciaAsync(WebTrasladista_consumeWCF.ServiceReference1.ObtenAgenciaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MuestraDatos", ReplyAction="http://tempuri.org/IService1/MuestraDatosResponse")]
-        void MuestraDatos(System.Collections.Generic.List<string> cad, System.Web.UI.WebControls.DropDownList cmb1);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaUsuario", ReplyAction="http://tempuri.org/IService1/InsertaUsuarioResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioResponse InsertaUsuario(WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MuestraDatos", ReplyAction="http://tempuri.org/IService1/MuestraDatosResponse")]
-        System.Threading.Tasks.Task MuestraDatosAsync(System.Collections.Generic.List<string> cad, System.Web.UI.WebControls.DropDownList cmb1);
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaUsuario", ReplyAction="http://tempuri.org/IService1/InsertaUsuarioResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioResponse> InsertaUsuarioAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaGasto", ReplyAction="http://tempuri.org/IService1/InsertaGastoResponse")]
         WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoResponse InsertaGasto(WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoRequest request);
@@ -284,6 +253,70 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
             this.ObtenAgenciaResult = ObtenAgenciaResult;
             this.msj = msj;
             this.ids = ids;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaUsuario", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string Nombre;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string Paterno;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string Materno;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public int Edad;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string Rfc;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string Pass;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
+        public int fk_rol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=8)]
+        public string mensaje;
+        
+        public InsertaUsuarioRequest() {
+        }
+        
+        public InsertaUsuarioRequest(string Nombre, string Paterno, string Materno, int Edad, string Rfc, string Email, string Pass, int fk_rol, string mensaje) {
+            this.Nombre = Nombre;
+            this.Paterno = Paterno;
+            this.Materno = Materno;
+            this.Edad = Edad;
+            this.Rfc = Rfc;
+            this.Email = Email;
+            this.Pass = Pass;
+            this.fk_rol = fk_rol;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaUsuarioResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string mensaje;
+        
+        public InsertaUsuarioResponse() {
+        }
+        
+        public InsertaUsuarioResponse(string mensaje) {
+            this.mensaje = mensaje;
         }
     }
     
@@ -568,12 +601,28 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
             return base.Channel.ObtenAgenciaAsync(request);
         }
         
-        public void MuestraDatos(System.Collections.Generic.List<string> cad, System.Web.UI.WebControls.DropDownList cmb1) {
-            base.Channel.MuestraDatos(cad, cmb1);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.InsertaUsuario(WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioRequest request) {
+            return base.Channel.InsertaUsuario(request);
         }
         
-        public System.Threading.Tasks.Task MuestraDatosAsync(System.Collections.Generic.List<string> cad, System.Web.UI.WebControls.DropDownList cmb1) {
-            return base.Channel.MuestraDatosAsync(cad, cmb1);
+        public void InsertaUsuario(string Nombre, string Paterno, string Materno, int Edad, string Rfc, string Email, string Pass, int fk_rol, ref string mensaje) {
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioRequest();
+            inValue.Nombre = Nombre;
+            inValue.Paterno = Paterno;
+            inValue.Materno = Materno;
+            inValue.Edad = Edad;
+            inValue.Rfc = Rfc;
+            inValue.Email = Email;
+            inValue.Pass = Pass;
+            inValue.fk_rol = fk_rol;
+            inValue.mensaje = mensaje;
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).InsertaUsuario(inValue);
+            mensaje = retVal.mensaje;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioResponse> InsertaUsuarioAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaUsuarioRequest request) {
+            return base.Channel.InsertaUsuarioAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

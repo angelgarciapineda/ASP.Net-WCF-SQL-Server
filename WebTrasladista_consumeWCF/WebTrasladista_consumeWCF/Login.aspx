@@ -64,7 +64,7 @@
                             </div>
                             <div class="form-group">
                                 <p style="float: left;" class="text-white">¿No tienes una cuenta? </p>
-                                <a href="Home.aspx" id="emailHelp" class="form-text text-muted text-white">Registrarse</a>
+                                <a href="Register.aspx" id="emailHelp" class="form-text text-muted text-white">Registrarse</a>
                             </div>
 
                         </div>

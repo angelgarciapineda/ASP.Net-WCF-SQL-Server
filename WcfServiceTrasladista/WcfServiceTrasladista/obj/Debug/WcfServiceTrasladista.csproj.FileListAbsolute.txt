@@ -1,20 +1,36 @@
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll.config
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.pdb
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaSQL.dll
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaSQL.pdb
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csprojAssemblyReference.cache
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CoreCompileInputs.cache
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CopyComplete
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.dll
-C:\Users\User1\Documents\Visual Studio 2017\Projets\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.pdb
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll.config
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.pdb
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaSQL.dll
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaSQL.pdb
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csprojAssemblyReference.cache
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CoreCompileInputs.cache
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CopyComplete
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.dll
-C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.pdb
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csprojAssemblyReference.cache
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CoreCompileInputs.cache
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll.config
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.pdb
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaMySQL.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\MySql.Data.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\Google.Protobuf.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\Zstandard.Net.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\BouncyCastle.Crypto.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\Ubiety.Dns.Core.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\Renci.SshNet.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Buffers.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\K4os.Compression.LZ4.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\K4os.Hash.xxHash.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Memory.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\netstandard.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Numerics.Vectors.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaMySQL.pdb
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaMySQL.dll.config
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\MySql.Data.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\Google.Protobuf.pdb
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\Google.Protobuf.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\K4os.Compression.LZ4.Streams.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\Renci.SshNet.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Buffers.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\K4os.Compression.LZ4.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\K4os.Hash.xxHash.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Memory.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Numerics.Vectors.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CopyComplete
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.dll
+C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.pdb

@@ -5,9 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using ClassManejaSQL;
-using System.Data.SqlClient;
-using System.Web.UI.WebControls;
+using ClassManejaMySQL;
 
 namespace WcfServiceTrasladista
 {
@@ -32,14 +30,14 @@ namespace WcfServiceTrasladista
             objfinal.InsertToServicio(tipo, fkuusuario, fkgasto, fkagenciadestino, fkagenciadestino, ref mensaje);
         }
 
+        public void InsertaUsuario(string Nombre, string Paterno, string Materno, int Edad, string Rfc, string Email, string Pass, int fk_rol, ref string mensaje)
+        {
+            objfinal.InsertToUsuario(Nombre, Paterno, Materno, Edad, Rfc, Email, Pass, fk_rol, ref mensaje);
+        }
+
         public bool Login(ref string msj, string email, string password, ref bool valida)
         {
             return objfinal.ValidaLogin(ref msj, email, password, ref valida);
-        }
-
-        public void MuestraDatos(List<string> cad, DropDownList cmb1)
-        {
-            objfinal.MuestraDatosConID(cad, cmb1);
         }
 
         public List<string> ObtenAgencia(ref string msj, ref List<int> ids)

@@ -6,14 +6,15 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7035F2EB-E83B-4895-A5DE-55F4B1F1B635}</ProjectGuid>
+    <ProjectGuid>{00B453DD-ACC9-470F-AE2A-25323F59099B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WcfServiceTrasladista</RootNamespace>
     <AssemblyName>WcfServiceTrasladista</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -84,9 +85,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassManejaSQL\ClassManejaSQL.csproj">
-      <Project>{9eb07be3-5866-472d-ab08-d6130c1276b9}</Project>
-      <Name>ClassManejaSQL</Name>
+    <ProjectReference Include="..\ClassManejaMySQL\ClassManejaMySQL.csproj">
+      <Project>{1f63ac28-90df-48f9-9a7c-d3f189519737}</Project>
+      <Name>ClassManejaMySQL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -102,9 +103,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49619</DevelopmentServerPort>
+          <DevelopmentServerPort>51579</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49619/</IISUrl>
+          <IISUrl>http://localhost:51579/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

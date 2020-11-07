@@ -1,0 +1,285 @@
+drop database Trasladista;
+create database Trasladista;
+use Trasladista;
+
+
+create table Rol (
+idRol int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Tipo_rol varchar(max)
+);
+
+create table Usuario(
+idUsuario int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Nombre varchar(max),
+Ap varchar(max),
+Am varchar(max),
+Edad int,
+Rfc varchar(max),
+Email varchar(max),
+Contrasenia varchar(max),
+fk_rol int,
+foreign key(fk_rol) references Rol (idRol) on delete cascade
+);
+
+create table Vehiculo(
+idVehiculo int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Marca varchar(max),
+Modelo varchar(max),
+Color varchar(max),
+Tipo varchar(max)
+);
+
+create table Gasto_servicio (
+idGastoservicio int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Duracion int,
+Restriccion varchar(max),
+Necesidades_especificas varchar(max),
+Kilometros float,
+Tiempo_transporte int,
+Costo_transporte float,
+Sueldo float,
+Salario float,
+Costo_casetas float,
+Total float
+);
+
+create table Gastoservicio_Vehiculo(
+idGastoVehiculo int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Cantidad int,
+Precio_unidad float,
+fk_gastoservicio int,
+fk_vehiculo int,
+foreign key (fk_gastoservicio) references Gasto_servicio (idGastoservicio) on delete cascade,
+foreign key (fk_vehiculo) references Vehiculo (idVehiculo) on delete cascade
+);
+
+create table Estado(
+idEstado int  PRIMARY KEY AUTO_INCREMENT,
+Estado varchar(max)
+);
+
+create table Ciudad(
+idCiudad int PRIMARY KEY AUTO_INCREMENT,
+Ciudad varchar(max),
+fk_estado int,
+foreign key (fk_estado) references Estado (idEstado) on delete cascade
+);
+
+create table Municipio(
+idMunicipio int PRIMARY KEY AUTO_INCREMENT,
+Municipio varchar(max),
+fk_ciudad int,
+foreign key (fk_ciudad) references Ciudad (idCiudad) on delete cascade
+);
+
+create table Codigo_postal(
+idCp int PRIMARY KEY AUTO_INCREMENT,
+Codigo_postal varchar(max),
+fk_municipio int,
+foreign key (fk_municipio) references Municipio (idMunicipio) on delete cascade
+);
+
+create table Colonia(
+idColonia int PRIMARY KEY AUTO_INCREMENT,
+Colonia varchar(max),
+fk_cp int,
+foreign key (fk_cp) references Codigo_postal (idCp) on delete cascade
+);
+
+create table Direccion(
+idDireccion int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Calle varchar(max),
+Num_interior varchar(max),
+Num_exterior varchar(max),
+fk_colonia int,
+foreign key (fk_colonia) references Colonia (idColonia) on delete cascade
+);
+
+create table Agencia(
+idAgencia int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Nombre_sucursal varchar(max),
+fk_direccion int,
+foreign key (fk_direccion) references Direccion (idDireccion) on delete cascade
+);
+
+create table Servicio(
+idServicio int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Tipo_servicio varchar(max),
+fk_usuario int,
+fk_gastoservicio int,
+fk_agenciaOrigen int,
+fk_agenciaDestino int,
+foreign key (fk_usuario) references Usuario (idUsuario) on delete cascade,
+foreign key (fk_gastoservicio) references Gasto_servicio (idGastoservicio) on delete cascade,
+foreign key (fk_agenciaOrigen) references Agencia (idAgencia),
+foreign key (fk_agenciaDestino) references Agencia (idAgencia)
+);
+
+create table Echecklist(
+idEchecklist int PRIMARY KEY AUTO_INCREMENT,
+Creado_el datetime,
+Modificado_el datetime,
+Fecha_solicitud datetime,
+Fecha_entrega datetime,
+Hora_salida time,
+Hora_llegada time,
+Llaves varchar(max),
+Controles varchar(max),
+Alarmas varchar(max),
+Llaves_duplicadas varchar(max),
+Kilometraje varchar(max),
+Radio varchar(max),
+Bocinas varchar(max),
+Aire_acondicionado varchar(max),
+Luces varchar(max),
+Intermitentes varchar(max),
+Stop varchar(max),
+Luces_de_niebla varchar(max),
+Limpiadores varchar(max),
+Retrovisor varchar(max),
+Espejo_concavo varchar(max),
+Vaso_cenicero varchar(max),
+Encendedor_tapa varchar(max),
+Estuche_documentos varchar(max),
+Manuales varchar(max),
+Memoria varchar(max),
+Cinturones_de_seguridad varchar(max),
+ControlDVD varchar(max),
+Pilas varchar(max),
+Audifonos varchar(max),
+Tapetes varchar(max),
+Alfombra varchar(max),
+Cielo varchar(max),
+Asientos varchar(max),
+Tapete_de_cajuela varchar(max),
+Red_carga varchar(max),
+Llanta_refaccion varchar(max),
+Kit_herramientas varchar(max),
+Birlo_de_seguridad varchar(max),
+BS_llanta_auxiliar varchar(max),
+Llave_tuercas varchar(max),
+Gancho_quita_tapones varchar(max),
+Gato varchar(max),
+Llantas varchar(max),
+Tapones_de_rines varchar(max),
+Centros_de_rines varchar(max),
+Tapon_gasolina varchar(max),
+Emblemas varchar(max),
+Molduras varchar(max),
+Antena varchar(max),
+Toldo varchar(max),
+Bateria varchar(max),
+Niveles varchar(max),
+Tolvas varchar(max),
+Marco_interior_puertas varchar(max),
+Condicion_bajo_piso varchar(max),
+Standar varchar(max),
+Automática varchar(max),
+Observacion_lateral_izq varchar(max),
+Observacion_lateral_der varchar(max),
+Observacion_trasera varchar(max),
+Observacion_frontal varchar(max),
+Observacion_origen varchar(max),
+Observacion_destino varchar(max),
+fk_servicio int,
+foreign key (fk_servicio) references Servicio (idServicio)
+);
+
+insert into Rol values
+('','','Administrador'),
+('','','Moderador'),
+('','','Operador');
+
+insert into Usuario values
+('','','Luis Angel','Garcia','Pineda',22,'GAPL980418','garciapinedaluisangel@gmail.com','1234',1),
+('','','Kelly Joy','Hernandez','Castuera',21,'ABCDEFGH','kelly@gmail.com','1234',3);
+
+insert into Vehiculo values
+('','','Renault','2000','Rojo','Standard'),
+('','','Ford','Fiesta','Rojo','Standard'),
+('','','Chevrolet','Mustang 18','Negro','Standard'),
+('','','Abarth','500','Negro','Standard'),
+('','','Alfa Romeo','Grande Punto','Negro','Standard'),
+('','','Aro','Punto Evo','Negro','Standard'),
+('','','Asia','500c','Negro','Standard'),
+('','','Asia Motors','695','Negro','Standard'),
+('','','Aston Martin','Punto','Negro','Standard'),
+('','','Audi','155','Negro','Standard'),
+('','','Austin','156','Negro','Standard'),
+('','','Auverland','159','Negro','Standard'),
+('','','Bentley','164','Negro','Standard'),
+('','','Bertone','145','Negro','Standard'),
+('','','Bmw','147','Negro','Standard'),
+('','','Cadillac','146','Negro','Standard'),
+('','','Chevrolet','Gtv','Negro','Standard'),
+('','','Chrysler','Spider','Negro','Standard'),
+('','','Citroen','166','Negro','Standard'),
+('','','Corvette','Gt','Negro','Standard'),
+('','','Dacia','Crosswagon','Negro','Standard'),
+('','','Daewoo','Brera','Negro','Standard'),
+('','','Daf','90','Negro','Standard');
+
+insert into Estado values
+('Puebla');
+insert into Ciudad values
+('Puebla',1);
+insert into Municipio values
+('Puebla',1);
+insert into Codigo_postal values
+('72014',1);
+insert into Colonia values
+('Santa Barbara',1);
+insert into Direccion values
+('','','Privada ameyalco','18','18',1),
+('','','Camino a potreros','18','18',1);
+insert into Agencia values
+('','','Los Fuertes',1),
+('','','Los angeles',2);
+
+
+create procedure InsertToGastos_servicio
+@Creado_el datetime,
+@Modificado_el datetime,
+@Duracion int,
+@Restriccion varchar(max),
+@Necesidades varchar(max),
+@Km float,
+@Tiempotrans int,
+@Costotrans float,
+@Sueldo float,
+@Salario float,
+@Costocasetas float,
+@Total float
+as
+BEGIN
+insert into Gasto_servicio values (@Creado_el,@Modificado_el,@Duracion,@Restriccion,@Necesidades,@Km,@Tiempotrans,@Costotrans,@Sueldo,@Salario,@Costocasetas,@Total);
+select top 1 idGastoservicio from Gasto_servicio order by idGastoservicio desc
+END
+go
+;
+
+
+exec InsertToGastos_servicio '2020-10-15 00:00:00.000', '2016-12-21 00:00:00.000',2,'Sin restriccion','Necesidades',12.3,3,12.56,30.9,30.9,200.7,1000;
+
+select * from Gastoservicio_Vehiculo
+inner join Gasto_servicio on Gasto_servicio.idGastoservicio=Gastoservicio_Vehiculo.fk_gastoservicio
+inner join Vehiculo on Vehiculo.idVehiculo=Gastoservicio_Vehiculo.fk_vehiculo;
+
+select * from Gasto_servicio
+select * from Servicio;
