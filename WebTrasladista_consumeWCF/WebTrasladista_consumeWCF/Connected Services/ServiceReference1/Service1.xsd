@@ -96,14 +96,10 @@
   <xs:element name="InsertaGasto">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="duracion" type="xs:int" />
         <xs:element minOccurs="0" name="restriccion" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="necesidad" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="km" type="xs:double" />
         <xs:element minOccurs="0" name="tiempo_trans" type="xs:int" />
-        <xs:element minOccurs="0" name="costo_trans" type="xs:double" />
-        <xs:element minOccurs="0" name="sueldo" type="xs:double" />
-        <xs:element minOccurs="0" name="salario" type="xs:double" />
         <xs:element minOccurs="0" name="costo_casetas" type="xs:double" />
         <xs:element minOccurs="0" name="total" type="xs:double" />
         <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
@@ -123,6 +119,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="cantidad" type="xs:int" />
         <xs:element minOccurs="0" name="precio" type="xs:double" />
+        <xs:element minOccurs="0" name="total" type="xs:double" />
         <xs:element minOccurs="0" name="fkgasto" type="xs:int" />
         <xs:element minOccurs="0" name="fkvehiculo" type="xs:int" />
         <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
@@ -140,6 +137,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="fkuusuario" type="xs:int" />
         <xs:element minOccurs="0" name="fkgasto" type="xs:int" />
         <xs:element minOccurs="0" name="fkagenciaorigen" type="xs:int" />

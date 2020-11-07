@@ -34,3 +34,14 @@ C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\bin\System.Ru
 C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CopyComplete
 C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.dll
 C:\Users\User1\Desktop\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.pdb
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csprojAssemblyReference.cache
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CoreCompileInputs.cache
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.dll
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.pdb
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll.config
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.dll
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\WcfServiceTrasladista.pdb
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaMySQL.dll
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaMySQL.pdb
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\bin\ClassManejaMySQL.dll.config
+C:\Users\User1\Documents\Visual Studio 2017\Projets\Trasladista\WcfServiceTrasladista\WcfServiceTrasladista\obj\Debug\WcfServiceTrasladista.csproj.CopyComplete

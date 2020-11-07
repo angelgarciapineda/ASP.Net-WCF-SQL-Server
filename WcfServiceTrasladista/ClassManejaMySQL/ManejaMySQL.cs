@@ -1,6 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿//using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace ClassManejaMySQL
     {
         public string CadenaConexion { set; get; }
 
-        public MySqlConnection AbrirConexion(ref string msj)
+        public SqlConnection AbrirConexion(ref string msj)
         {
-            MySqlConnection conexion = new MySqlConnection();
+            SqlConnection conexion = new SqlConnection();
             conexion.ConnectionString = CadenaConexion;
 
             try
@@ -29,10 +30,10 @@ namespace ClassManejaMySQL
             return conexion;
         }
 
-        public bool Op_ModificarBD(MySqlConnection carretera, string sentenciaSQL, ref string mensj)
+        public bool Op_ModificarBD(SqlConnection carretera, string sentenciaSQL, ref string mensj)
         {
             bool salida = false;
-            MySqlCommand carrito = new MySqlCommand();
+            SqlCommand carrito = new SqlCommand();
             if (carretera != null)
             {
                 carrito.Connection = carretera;
@@ -57,10 +58,10 @@ namespace ClassManejaMySQL
             }
             return salida;
         }
-        public MySqlDataReader ConsultaDataReader(ref MySqlConnection cn_abierta, string query1, ref string mensj)
+        public SqlDataReader ConsultaDataReader(ref SqlConnection cn_abierta, string query1, ref string mensj)
         {
-            MySqlDataReader contenedor = null;
-            MySqlCommand carrito = new MySqlCommand();
+            SqlDataReader contenedor = null;
+            SqlCommand carrito = new SqlCommand();
 
             if (cn_abierta != null)
             {
@@ -85,11 +86,11 @@ namespace ClassManejaMySQL
             return contenedor;
         }
 
-        public System.Data.DataSet ConsultaDataSet(MySqlConnection conexion, string query, ref string mensaje)
+        public System.Data.DataSet ConsultaDataSet(SqlConnection conexion, string query, ref string mensaje)
         {
             System.Data.DataSet contenedorgrande = new System.Data.DataSet();
-            MySqlCommand carrito = new MySqlCommand();
-            MySqlDataAdapter trailer = new MySqlDataAdapter();
+            SqlCommand carrito = new SqlCommand();
+            SqlDataAdapter trailer = new SqlDataAdapter();
 
             if (conexion != null)
             {
@@ -118,12 +119,12 @@ namespace ClassManejaMySQL
             return contenedorgrande;
         }
 
-        public MySqlDataReader ConsultaDataReaderConParametros(ref MySqlConnection ConexAbierta, string query, MySqlParameter[] para, ref string mensaje)
+        public SqlDataReader ConsultaDataReaderConParametros(ref SqlConnection ConexAbierta, string query, SqlParameter[] para, ref string mensaje)
         {
-            MySqlDataReader contenedor = null;
-            MySqlCommand TransporteSQL = new MySqlCommand();
+            SqlDataReader contenedor = null;
+            SqlCommand TransporteSQL = new SqlCommand();
 
-            foreach (MySqlParameter n in para)
+            foreach (SqlParameter n in para)
             {
                 TransporteSQL.Parameters.Add(n);
             }

@@ -326,50 +326,34 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
     public partial class InsertaGastoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public int duracion;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
         public string restriccion;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
         public string necesidad;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
         public double km;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
         public int tiempo_trans;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
-        public double costo_trans;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
-        public double sueldo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
-        public double salario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=8)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
         public double costo_casetas;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=9)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
         public double total;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=10)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
         public string mensaje;
         
         public InsertaGastoRequest() {
         }
         
-        public InsertaGastoRequest(int duracion, string restriccion, string necesidad, double km, int tiempo_trans, double costo_trans, double sueldo, double salario, double costo_casetas, double total, string mensaje) {
-            this.duracion = duracion;
+        public InsertaGastoRequest(string restriccion, string necesidad, double km, int tiempo_trans, double costo_casetas, double total, string mensaje) {
             this.restriccion = restriccion;
             this.necesidad = necesidad;
             this.km = km;
             this.tiempo_trans = tiempo_trans;
-            this.costo_trans = costo_trans;
-            this.sueldo = sueldo;
-            this.salario = salario;
             this.costo_casetas = costo_casetas;
             this.total = total;
             this.mensaje = mensaje;
@@ -408,20 +392,24 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         public double precio;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public int fkgasto;
+        public double total;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
-        public int fkvehiculo;
+        public int fkgasto;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public int fkvehiculo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
         public string mensaje;
         
         public InsertaGastoVehiculoRequest() {
         }
         
-        public InsertaGastoVehiculoRequest(int cantidad, double precio, int fkgasto, int fkvehiculo, string mensaje) {
+        public InsertaGastoVehiculoRequest(int cantidad, double precio, double total, int fkgasto, int fkvehiculo, string mensaje) {
             this.cantidad = cantidad;
             this.precio = precio;
+            this.total = total;
             this.fkgasto = fkgasto;
             this.fkvehiculo = fkvehiculo;
             this.mensaje = mensaje;
@@ -453,25 +441,29 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         public string tipo;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public int fkuusuario;
+        public string estado;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public int fkgasto;
+        public int fkuusuario;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
-        public int fkagenciaorigen;
+        public int fkgasto;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
-        public int fkagenciadestino;
+        public int fkagenciaorigen;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public int fkagenciadestino;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
         public string mensaje;
         
         public InsertaServicioRequest() {
         }
         
-        public InsertaServicioRequest(string tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, string mensaje) {
+        public InsertaServicioRequest(string tipo, string estado, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, string mensaje) {
             this.tipo = tipo;
+            this.estado = estado;
             this.fkuusuario = fkuusuario;
             this.fkgasto = fkgasto;
             this.fkagenciaorigen = fkagenciaorigen;
@@ -630,16 +622,12 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
             return base.Channel.InsertaGasto(request);
         }
         
-        public int InsertaGasto(int duracion, string restriccion, string necesidad, double km, int tiempo_trans, double costo_trans, double sueldo, double salario, double costo_casetas, double total, ref string mensaje) {
+        public int InsertaGasto(string restriccion, string necesidad, double km, int tiempo_trans, double costo_casetas, double total, ref string mensaje) {
             WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoRequest();
-            inValue.duracion = duracion;
             inValue.restriccion = restriccion;
             inValue.necesidad = necesidad;
             inValue.km = km;
             inValue.tiempo_trans = tiempo_trans;
-            inValue.costo_trans = costo_trans;
-            inValue.sueldo = sueldo;
-            inValue.salario = salario;
             inValue.costo_casetas = costo_casetas;
             inValue.total = total;
             inValue.mensaje = mensaje;
@@ -657,10 +645,11 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
             return base.Channel.InsertaGastoVehiculo(request);
         }
         
-        public void InsertaGastoVehiculo(int cantidad, double precio, int fkgasto, int fkvehiculo, ref string mensaje) {
+        public void InsertaGastoVehiculo(int cantidad, double precio, double total, int fkgasto, int fkvehiculo, ref string mensaje) {
             WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoRequest();
             inValue.cantidad = cantidad;
             inValue.precio = precio;
+            inValue.total = total;
             inValue.fkgasto = fkgasto;
             inValue.fkvehiculo = fkvehiculo;
             inValue.mensaje = mensaje;
@@ -677,9 +666,10 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
             return base.Channel.InsertaServicio(request);
         }
         
-        public void InsertaServicio(string tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje) {
+        public void InsertaServicio(string tipo, string estado, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje) {
             WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest();
             inValue.tipo = tipo;
+            inValue.estado = estado;
             inValue.fkuusuario = fkuusuario;
             inValue.fkgasto = fkgasto;
             inValue.fkagenciaorigen = fkagenciaorigen;

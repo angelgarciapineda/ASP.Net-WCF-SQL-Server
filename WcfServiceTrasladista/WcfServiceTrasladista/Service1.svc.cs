@@ -15,19 +15,19 @@ namespace WcfServiceTrasladista
     {
         LogicaServicio objfinal = new LogicaServicio();
 
-        public int InsertaGasto(int duracion, string restriccion, string necesidad, double km, int tiempo_trans, double costo_trans, double sueldo, double salario, double costo_casetas, double total, ref string mensaje)
+        public int InsertaGasto(string restriccion, string necesidad, double km, int tiempo_trans, double costo_casetas, double total, ref string mensaje)
         {
-            return objfinal.InsertToGasto_servicio(duracion, restriccion, necesidad, km, tiempo_trans, costo_trans, sueldo, salario, costo_casetas, total, ref mensaje);
+            return objfinal.InsertToGasto_servicio(restriccion, necesidad, km, tiempo_trans, costo_casetas, total, ref mensaje);
         }
 
-        public void InsertaGastoVehiculo(int cantidad, double precio, int fkgasto, int fkvehiculo, ref string mensaje)
+        public void InsertaGastoVehiculo(int cantidad, double precio,double total, int fkgasto, int fkvehiculo, ref string mensaje)
         {
-            objfinal.InsertToGastoServicio_Vehiculo(cantidad, precio, fkgasto, fkvehiculo, ref mensaje);
+            objfinal.InsertToGastoServicio_Vehiculo(cantidad, precio,total, fkgasto, fkvehiculo, ref mensaje);
         }
 
-        public void InsertaServicio(string tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje)
+        public void InsertaServicio(string tipo,string estado, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje)
         {
-            objfinal.InsertToServicio(tipo, fkuusuario, fkgasto, fkagenciadestino, fkagenciadestino, ref mensaje);
+            objfinal.InsertToServicio(tipo,estado, fkuusuario, fkgasto, fkagenciadestino, fkagenciadestino, ref mensaje);
         }
 
         public void InsertaUsuario(string Nombre, string Paterno, string Materno, int Edad, string Rfc, string Email, string Pass, int fk_rol, ref string mensaje)

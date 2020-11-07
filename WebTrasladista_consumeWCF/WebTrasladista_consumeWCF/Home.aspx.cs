@@ -83,48 +83,48 @@ namespace WebTrasladista_consumeWCF
         }
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            string msj = "";
-            try
-            {
-                int i = 0; //id de Gasto
-                //Lista paara almacenar los id's de los vehiculos
-                List<int> temp = new List<int>();
-                temp = (List<int>)Session["idsVehiculos"];
-                double total = Convert.ToInt16(txtcantidad.Text) * Convert.ToDouble(txtprecio.Text);
-                //Inserta a tabla Gasto_servicio
-                i = uno.InsertaGasto(Convert.ToInt16(txtduracion.Text), txtrestri.Text, txtneces.Text,
-                    Convert.ToDouble(txtkm.Text), Convert.ToInt16(txttiempotrans.Text), Convert.ToDouble(txtcontroltrans.Text),
-                    Convert.ToDouble(txtsueldo.Text), Convert.ToDouble(txtsalario.Text), Convert.ToDouble(txtcostocaseta.Text),
-                    total, ref msj);
-                lbGastoServicio.Text = lbGastoServicio.Text + " " + i.ToString();
-                //Inserta a tabla GastoServicio_Vehiculo
-                uno.InsertaGastoVehiculo(Convert.ToInt16(txtcantidad.Text), Convert.ToDouble(txtprecio.Text), i, temp[cmbVehiculo.SelectedIndex], ref msj);
-                lbRespuesta.Text = msj;
+            //string msj = "";
+            //try
+            //{
+            //    int i = 0; //id de Gasto
+            //    //Lista paara almacenar los id's de los vehiculos
+            //    List<int> temp = new List<int>();
+            //    temp = (List<int>)Session["idsVehiculos"];
+            //    double total = Convert.ToInt16(txtcantidad.Text) * Convert.ToDouble(txtprecio.Text);
+            //    //Inserta a tabla Gasto_servicio
+            //    i = uno.InsertaGasto(Convert.ToInt16(txtduracion.Text), txtrestri.Text, txtneces.Text,
+            //        Convert.ToDouble(txtkm.Text), Convert.ToInt16(txttiempotrans.Text), Convert.ToDouble(txtcontroltrans.Text),
+            //        Convert.ToDouble(txtsueldo.Text), Convert.ToDouble(txtsalario.Text), Convert.ToDouble(txtcostocaseta.Text),
+            //        total, ref msj);
+            //    lbGastoServicio.Text = lbGastoServicio.Text + " " + i.ToString();
+            //    //Inserta a tabla GastoServicio_Vehiculo
+            //    uno.InsertaGastoVehiculo(Convert.ToInt16(txtcantidad.Text), Convert.ToDouble(txtprecio.Text), i, temp[cmbVehiculo.SelectedIndex], ref msj);
+            //    lbRespuesta.Text = msj;
 
-                Session["idGasto"] = i;
-            }
-            catch (Exception m)
-            {
-                lbRespuesta.Text = m.ToString();
-            }
+            //    Session["idGasto"] = i;
+            //}
+            //catch (Exception m)
+            //{
+            //    lbRespuesta.Text = m.ToString();
+            //}
         }
 
         protected void btnAgregarExtra_Click(object sender, EventArgs e)
         {
-            try
-            {
-                List<int> temp = new List<int>();
-                temp = (List<int>)Session["idsVehiculos"];
-                int i = (int)Session["idGasto"];
-                String msj = "";
-                //Inserta a tabla GastoServicio_Vehiculo
-                uno.InsertaGastoVehiculo(Convert.ToInt16(txtCantidadExtra.Text), Convert.ToDouble(txtPrecioExtra.Text), i, temp[cmbVehiculoExtra.SelectedIndex], ref msj);
-                lbRespuesta.Text = msj;
-            }
-            catch (Exception c)
-            {
-                lbRespuesta.Text = c.Message;
-            }
+            //try
+            //{
+            //    List<int> temp = new List<int>();
+            //    temp = (List<int>)Session["idsVehiculos"];
+            //    int i = (int)Session["idGasto"];
+            //    String msj = "";
+            //    //Inserta a tabla GastoServicio_Vehiculo
+            //    uno.InsertaGastoVehiculo(Convert.ToInt16(txtCantidadExtra.Text), Convert.ToDouble(txtPrecioExtra.Text), i, temp[cmbVehiculoExtra.SelectedIndex], ref msj);
+            //    lbRespuesta.Text = msj;
+            //}
+            //catch (Exception c)
+            //{
+            //    lbRespuesta.Text = c.Message;
+            //}
         }
 
         protected void btnGuardarServicio_Click(object sender, EventArgs e)

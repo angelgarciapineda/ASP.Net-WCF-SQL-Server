@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <%-- TARJETA DE CALCULAR GASTO DE SERVICIO --%>
+                                            <%-- TARJETA DE SOLICITUD DE SERVICIO --%>
                                             <div class="card">
                                                 <div class="card-header">
                                                     Calcular gasto de servicio
@@ -93,95 +93,78 @@
                                                 <div class="card-body">
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label2" runat="server" Text="Kilometros"></asp:Label>
-                                                            <asp:TextBox ID="txtkm" runat="server" class="form-control"></asp:TextBox>
+                                                            <asp:Label ID="Label2" runat="server" Text="Kilometros de transporte"></asp:Label>
+                                                            <asp:TextBox ID="txtKm" runat="server" class="form-control"></asp:TextBox>
                                                         </div>
                                                     </div>
+
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <asp:Label for="inputAddress" ID="Label3" runat="server" Text="Tiempo de transporte"></asp:Label>
-                                                            <asp:TextBox ID="txttiempotrans" runat="server" class="form-control"></asp:TextBox>
+                                                            <asp:Label for="inputAddress" ID="Label3" runat="server" Text="Duración de transporte"></asp:Label>
+                                                            <asp:TextBox ID="txtTiempoTransporte" runat="server" class="form-control"></asp:TextBox>
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label4" runat="server" Text="Costo de transporte"></asp:Label>
-                                                            <asp:TextBox ID="txtcontroltrans" runat="server" class="form-control"></asp:TextBox>
+                                                            <asp:Label ID="Label4" runat="server" Text="Costo de transporte : ????"></asp:Label>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label5" runat="server" Text="Sueldo"></asp:Label>
-                                                            <asp:TextBox ID="txtsueldo" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label6" runat="server" Text="Salario"></asp:Label>
-                                                            <asp:TextBox ID="txtsalario" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <asp:Label ID="Label7" runat="server" Text="Costo de casetas"></asp:Label>
-                                                        <asp:TextBox ID="txtcostocaseta" runat="server" class="form-control"></asp:TextBox>
-                                                    </div>
+
                                                     <div class="form-group">
                                                         <asp:Label ID="Label8" runat="server" Text="Restricciones"></asp:Label>
-                                                        <asp:TextBox ID="txtrestri" runat="server" class="form-control"></asp:TextBox>
+                                                        <asp:TextBox ID="txtRestriccion" runat="server" class="form-control"></asp:TextBox>
                                                     </div>
+
                                                     <div class="form-group">
                                                         <asp:Label ID="Label9" runat="server" Text="Necesidades"></asp:Label>
-                                                        <asp:TextBox ID="txtneces" runat="server" class="form-control"></asp:TextBox>
+                                                        <asp:TextBox ID="txtNecesidad" runat="server" class="form-control"></asp:TextBox>
                                                     </div>
+
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <asp:Button ID="btnCargaVehiculo" runat="server" Text="Vehiculos disponibles" class="btn btn-block btn-primary"/>
+                                                            <asp:Button ID="btnCargaVehiculo" runat="server" Text="Vehiculos disponibles" class="btn btn-block btn-primary" OnClick="btnCargaVehiculo_Click" />
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <asp:DropDownList ID="cmbVehiculo" runat="server" class="form-control"></asp:DropDownList>
                                                         </div>
                                                     </div>
+
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <asp:Label ID="Label11" runat="server" Text="Cantidad"></asp:Label>
                                                             <asp:TextBox ID="txtcantidad" runat="server" class="form-control"></asp:TextBox>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label12" runat="server" Text="Precio"></asp:Label>
-                                                            <asp:TextBox ID="txtprecio" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
                                                     </div>
+
                                                     <div class="form-group">
-                                                        <asp:Button ID="btnagregar" runat="server" Text="Añadir" class="btn btn-primary btn-block"/>
-                                                        <%--                                        <asp:Button ID="btnguardar" runat="server" Text="Guardar" class="btn btn-primary" />--%>
+                                                        <asp:Button ID="btnagregar" runat="server" Text="Añadir" class="btn btn-primary btn-block" OnClick="btnagregar_Click" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <%-- FIN TARJETA DE CALCULAR GASTO DE SERVICIO --%>
+                                            <%-- FIN TARJETA DE SOLICITUD DE SERVICIOO --%>
                                         </div>
                                         <div class="col-6">
-                                            <%-- INICIO TARJETA DETALLE DE SERVICIO --%>
+                                            <%-- INICIO TARJETA DE SOLICITUD DE SERVICIO --%>
                                             <div class="card">
                                                 <div class="card-header">
                                                     <asp:Label ID="lbGastoServicio" runat="server" Text="Gasto de servicio: "></asp:Label>
                                                 </div>
                                                 <div class="card-body">
                                                     <h5 class="card-title">Honda Civic Type-R</h5>
-                                                    <p class="card-text">Operador asignado: </p>
                                                     <p class="card-text">¿Desea añadir más vehiculos?</p>
                                                     <asp:DropDownList ID="cmbVehiculoExtra" runat="server" class="form-control"></asp:DropDownList>
+
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <asp:Label ID="Label10" runat="server" Text="Cantidad"></asp:Label>
                                                             <asp:TextBox class="form-control" ID="txtCantidadExtra" runat="server"></asp:TextBox>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label13" runat="server" Text="Precio"></asp:Label>
-                                                            <asp:TextBox class="form-control" ID="txtPrecioExtra" runat="server"></asp:TextBox>
-                                                        </div>
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <asp:Button class="btn btn-primary btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" />
+                                                        <asp:Button class="btn btn-primary btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" OnClick="btnAgregarExtra_Click" />
                                                         <p class="card-text">Agencia origen</p>
                                                         <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control"></asp:DropDownList>
                                                     </div>
+
                                                     <div class="form-group">
                                                         <p class="card-text">Agencia destino</p>
                                                         <asp:DropDownList ID="cmbDestino" runat="server" class="form-control"></asp:DropDownList>
@@ -190,11 +173,11 @@
 
                                                     </div>
                                                     <div class="form-group">
-                                                        <asp:Button class="btn btn-primary" ID="btnGuardarServicio" runat="server" Text="Guardar datos"/>
+                                                        <asp:Button class="btn btn-primary" ID="btnGuardarServicio" runat="server" Text="Guardar datos" OnClick="btnGuardarServicio_Click" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <%-- FIN TARJETA DE DETALLE DE SERVICIO --%>
+                                            <%-- FIN TARJETA DE SOLICITUD DE SERVICIO --%>
                                         </div>
                                     </div>
                                 </div>

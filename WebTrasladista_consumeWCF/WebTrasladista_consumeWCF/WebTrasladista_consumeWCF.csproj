@@ -82,7 +82,6 @@
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Solicitud.aspx" />
-    <Content Include="Traslado.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -124,13 +123,6 @@
     </Compile>
     <Compile Include="Solicitud.aspx.designer.cs">
       <DependentUpon>Solicitud.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Traslado.aspx.cs">
-      <DependentUpon>Traslado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Traslado.aspx.designer.cs">
-      <DependentUpon>Traslado.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

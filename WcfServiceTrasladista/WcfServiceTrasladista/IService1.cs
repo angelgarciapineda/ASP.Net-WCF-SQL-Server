@@ -29,15 +29,14 @@ namespace WcfServiceTrasladista
         void InsertaUsuario(String Nombre, String Paterno, String Materno, int Edad, String Rfc, String Email, String Pass, int fk_rol, ref string mensaje);
 
         [OperationContract]
-        int InsertaGasto(int duracion, string restriccion, string necesidad, double km,
-            int tiempo_trans, double costo_trans, double sueldo,
-            double salario, double costo_casetas, double total, ref string mensaje);
+        int InsertaGasto(string restriccion, string necesidad, double km,
+            int tiempo_trans, double costo_casetas, double total, ref string mensaje);
 
         [OperationContract]
-        void InsertaGastoVehiculo(int cantidad, double precio, int fkgasto, int fkvehiculo, ref string mensaje);
+        void InsertaGastoVehiculo(int cantidad, double precio,double total, int fkgasto, int fkvehiculo, ref string mensaje);
 
         [OperationContract]
-        void InsertaServicio(String tipo, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje);
+        void InsertaServicio(String tipo,string estado, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje);
         // TODO: agregue aquí sus operaciones de servicio
     }
 
