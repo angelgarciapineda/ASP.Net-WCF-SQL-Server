@@ -56,6 +56,8 @@ namespace ClassManejaMySQL
             }
             return valida;
         }
+        //Obtener IDS
+        #region
         /*Método para obtener los IDs de los operadores*/
         public List<string> DevuelveIDOperador(ref string mensaje, ref List<int> ids)
         {
@@ -145,6 +147,88 @@ namespace ClassManejaMySQL
             }
 
             return misAgencias;
+        }
+        #endregion
+        //Insertar en tablas
+        #region
+        /*Método para insertar en tabla Agencia origen*/
+        public int InsertToAgenciaOrigen(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, ref string mensaje)
+        {
+            int idAgenciaOrigen = 0;
+            try
+            {
+                DateTime dt = DateTime.Now;
+                SqlDataReader tablita = null;
+                SqlConnection conex = null;
+                conex = capa1.AbrirConexion(ref mensaje);
+                string consulta = "exec InsertToAgenciaOrigen '" + dt.ToString("MM/dd/yyyy HH:mm:ss") + "','" +
+                    dt.ToString("MM/dd/yyyy HH:mm:ss") + "','" + sucursal + "','" + calle + "','" +
+                    numint + "','" + numext + "','" + colonia + "','" + cp + "','" + ciudad + "','" + estado + "';";
+                tablita = capa1.ConsultaDataReader(ref conex, consulta, ref mensaje);
+
+                if (tablita != null)
+                {
+
+                    while (tablita.Read())
+                    {
+                        idAgenciaOrigen = (int)tablita[0];
+                    }
+                    conex.Close();
+                    conex.Dispose();
+                }
+                else
+                {
+                    mensaje = mensaje + "\n No hay datos";
+                }
+
+
+            }
+            catch (Exception c)
+            {
+                mensaje = c.Message;
+            }
+            return idAgenciaOrigen;
+
+        }
+
+        /*Método para insertar en tabla Agencia destino*/
+        public int InsertToAgenciaDestino(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, ref string mensaje)
+        {
+            int idAgenciaDestino = 0;
+            try
+            {
+                DateTime dt = DateTime.Now;
+                SqlDataReader tablita = null;
+                SqlConnection conex = null;
+                conex = capa1.AbrirConexion(ref mensaje);
+                string consulta = "exec InsertToAgenciaDestino '" + dt.ToString("MM/dd/yyyy HH:mm:ss") + "','" +
+                    dt.ToString("MM/dd/yyyy HH:mm:ss") + "','" + sucursal + "','" + calle + "','" +
+                    numint + "','" + numext + "','" + colonia + "','" + cp + "','" + ciudad + "','" + estado + "';";
+                tablita = capa1.ConsultaDataReader(ref conex, consulta, ref mensaje);
+
+                if (tablita != null)
+                {
+
+                    while (tablita.Read())
+                    {
+                        idAgenciaDestino = (int)tablita[0];
+                    }
+                    conex.Close();
+                    conex.Dispose();
+                }
+                else
+                {
+                    mensaje = mensaje + "\n No hay datos";
+                }
+
+
+            }
+            catch (Exception c)
+            {
+                mensaje = c.Message;
+            }
+            return idAgenciaDestino;
+
         }
 
         /*Método para insertar en tabla Gasto_servicio*/
@@ -299,14 +383,14 @@ namespace ClassManejaMySQL
             }
         }
         /*Método para insertar en tabla SERVICIO*/
-        public void InsertToServicio(string Tipo_servicio,string Estado, int fk_usuario, int fk_gastoservicio, int fk_agenciaOrigen, int fk_agenciaDestino, ref string mensaje)
+        public void InsertToServicio(string Tipo_servicio, string Estado, int fk_usuario, int fk_gastoservicio, int fk_agenciaOrigen, int fk_agenciaDestino, ref string mensaje)
         {
             try
             {
                 DateTime dt = DateTime.Now;
                 String consulta = "insert into Servicio " + "(Creado_el,Modificado_el,Tipo_servicio,Estado,fk_usuario,fk_gastoservicio,fk_agenciaOrigen,fk_agenciaDestino) " +
                     "values (@CREADO_EL,@MODIFICADO_EL,@TIPO,@ESTADO,@FK_USUARIO,@FK_GASTO,@FK_AGENCIAO,@FK_AGENCIAD) ";
-                SqlParameter[] param = new SqlParameter[7];
+                SqlParameter[] param = new SqlParameter[8];
 
                 param[0] = new SqlParameter("@CREADO_EL", SqlDbType.VarChar);
                 param[0].Direction = System.Data.ParameterDirection.Input;
@@ -323,7 +407,7 @@ namespace ClassManejaMySQL
                 param[3] = new SqlParameter("@ESTADO", SqlDbType.VarChar);
                 param[3].Direction = System.Data.ParameterDirection.Input;
                 param[3].Value = Estado;
-                
+
                 param[4] = new SqlParameter("@FK_USUARIO", SqlDbType.Int);
                 param[4].Direction = System.Data.ParameterDirection.Input;
                 param[4].Value = fk_usuario;
@@ -350,7 +434,30 @@ namespace ClassManejaMySQL
                 mensaje = "Mensaje : " + c.Message;
             }
         }
+        #endregion
+        //Mostrar datos
+        public System.Data.DataTable MostrarServicios(string fecha, string estado, ref string msj)
+        {
+            SqlConnection ctn3 = null;
+            System.Data.DataSet caja = null;
+            System.Data.DataTable salida = null;
+            string ms = "";
+            string query = "SELECT Servicio.idServicio as 'ID', Servicio.Creado_el as 'Fecha de solicitud', Tipo_servicio, Estado, CONCAT(Nombre,' ',Ap,' ',Am)as 'Cliente' " +
+                "FROM Servicio, Usuario, Agencia WHERE Estado='" + estado + "' AND Servicio.Creado_el>='" + fecha + "' and Servicio.fk_usuario = Usuario.idUsuario and Servicio.fk_agenciaOrigen = Agencia.idAgencia";
 
+            ctn3 = capa1.AbrirConexion(ref ms);
+            if (ctn3 != null)
+            {
+                caja = capa1.ConsultaDataSet(ctn3, query, ref ms);
+
+                if (caja != null)
+                {
+                    salida = caja.Tables[0];
+                }
+            }
+            return salida;
+
+        }
         #region
         //public Boolean ValidaLogin(ref string mensaje, String email, String pass, ref Boolean valida)
         //{

@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:51579/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:51579/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:51579/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:51579/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_Login_InputMessage">
@@ -49,11 +50,29 @@
   <wsdl:message name="IService1_InsertaGastoVehiculo_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertaGastoVehiculoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_InsertaAgenciaOrigen_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaAgenciaOrigen" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertaAgenciaOrigen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaAgenciaOrigenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertaAgenciaDestino_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaAgenciaDestino" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertaAgenciaDestino_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertaAgenciaDestinoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_InsertaServicio_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertaServicio" />
   </wsdl:message>
   <wsdl:message name="IService1_InsertaServicio_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertaServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarServicios_InputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarServicios" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarServicios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarServiciosResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Login">
@@ -84,9 +103,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaGastoVehiculo" message="tns:IService1_InsertaGastoVehiculo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaGastoVehiculoResponse" message="tns:IService1_InsertaGastoVehiculo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="InsertaAgenciaOrigen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaAgenciaOrigen" message="tns:IService1_InsertaAgenciaOrigen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaAgenciaOrigenResponse" message="tns:IService1_InsertaAgenciaOrigen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertaAgenciaDestino">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaAgenciaDestino" message="tns:IService1_InsertaAgenciaDestino_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaAgenciaDestinoResponse" message="tns:IService1_InsertaAgenciaDestino_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertaServicio">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertaServicio" message="tns:IService1_InsertaServicio_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertaServicioResponse" message="tns:IService1_InsertaServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarServicios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarServicios" message="tns:IService1_MostrarServicios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarServiciosResponse" message="tns:IService1_MostrarServicios_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -154,8 +185,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InsertaAgenciaOrigen">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertaAgenciaOrigen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertaAgenciaDestino">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertaAgenciaDestino" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertaServicio">
       <soap:operation soapAction="http://tempuri.org/IService1/InsertaServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarServicios">
+      <soap:operation soapAction="http://tempuri.org/IService1/MostrarServicios" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -64,12 +64,33 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaGastoVehiculo", ReplyAction="http://tempuri.org/IService1/InsertaGastoVehiculoResponse")]
         System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoResponse> InsertaGastoVehiculoAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaGastoVehiculoRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaAgenciaOrigen", ReplyAction="http://tempuri.org/IService1/InsertaAgenciaOrigenResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenResponse InsertaAgenciaOrigen(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaAgenciaOrigen", ReplyAction="http://tempuri.org/IService1/InsertaAgenciaOrigenResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenResponse> InsertaAgenciaOrigenAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaAgenciaDestino", ReplyAction="http://tempuri.org/IService1/InsertaAgenciaDestinoResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoResponse InsertaAgenciaDestino(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaAgenciaDestino", ReplyAction="http://tempuri.org/IService1/InsertaAgenciaDestinoResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoResponse> InsertaAgenciaDestinoAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaServicio", ReplyAction="http://tempuri.org/IService1/InsertaServicioResponse")]
         WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse InsertaServicio(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request);
         
         // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertaServicio", ReplyAction="http://tempuri.org/IService1/InsertaServicioResponse")]
         System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse> InsertaServicioAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarServicios", ReplyAction="http://tempuri.org/IService1/MostrarServiciosResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosResponse MostrarServicios(WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarServicios", ReplyAction="http://tempuri.org/IService1/MostrarServiciosResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosResponse> MostrarServiciosAsync(WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -434,6 +455,142 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaAgenciaOrigen", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaAgenciaOrigenRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sucursal;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string calle;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string numint;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string numext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string colonia;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string cp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string ciudad;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
+        public string estado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=8)]
+        public string mensaje;
+        
+        public InsertaAgenciaOrigenRequest() {
+        }
+        
+        public InsertaAgenciaOrigenRequest(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, string mensaje) {
+            this.sucursal = sucursal;
+            this.calle = calle;
+            this.numint = numint;
+            this.numext = numext;
+            this.colonia = colonia;
+            this.cp = cp;
+            this.ciudad = ciudad;
+            this.estado = estado;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaAgenciaOrigenResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaAgenciaOrigenResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int InsertaAgenciaOrigenResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string mensaje;
+        
+        public InsertaAgenciaOrigenResponse() {
+        }
+        
+        public InsertaAgenciaOrigenResponse(int InsertaAgenciaOrigenResult, string mensaje) {
+            this.InsertaAgenciaOrigenResult = InsertaAgenciaOrigenResult;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaAgenciaDestino", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaAgenciaDestinoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sucursal;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string calle;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string numint;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string numext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string colonia;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string cp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string ciudad;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
+        public string estado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=8)]
+        public string mensaje;
+        
+        public InsertaAgenciaDestinoRequest() {
+        }
+        
+        public InsertaAgenciaDestinoRequest(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, string mensaje) {
+            this.sucursal = sucursal;
+            this.calle = calle;
+            this.numint = numint;
+            this.numext = numext;
+            this.colonia = colonia;
+            this.cp = cp;
+            this.ciudad = ciudad;
+            this.estado = estado;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaAgenciaDestinoResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class InsertaAgenciaDestinoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int InsertaAgenciaDestinoResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string mensaje;
+        
+        public InsertaAgenciaDestinoResponse() {
+        }
+        
+        public InsertaAgenciaDestinoResponse(int InsertaAgenciaDestinoResult, string mensaje) {
+            this.InsertaAgenciaDestinoResult = InsertaAgenciaDestinoResult;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="InsertaServicio", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
     public partial class InsertaServicioRequest {
         
@@ -484,6 +641,50 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         }
         
         public InsertaServicioResponse(string mensaje) {
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MostrarServicios", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class MostrarServiciosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string fecha;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string estado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string mensaje;
+        
+        public MostrarServiciosRequest() {
+        }
+        
+        public MostrarServiciosRequest(string fecha, string estado, string mensaje) {
+            this.fecha = fecha;
+            this.estado = estado;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MostrarServiciosResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class MostrarServiciosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Data.DataTable MostrarServiciosResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string mensaje;
+        
+        public MostrarServiciosResponse() {
+        }
+        
+        public MostrarServiciosResponse(System.Data.DataTable MostrarServiciosResult, string mensaje) {
+            this.MostrarServiciosResult = MostrarServiciosResult;
             this.mensaje = mensaje;
         }
     }
@@ -662,6 +863,56 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.InsertaAgenciaOrigen(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenRequest request) {
+            return base.Channel.InsertaAgenciaOrigen(request);
+        }
+        
+        public int InsertaAgenciaOrigen(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, ref string mensaje) {
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenRequest();
+            inValue.sucursal = sucursal;
+            inValue.calle = calle;
+            inValue.numint = numint;
+            inValue.numext = numext;
+            inValue.colonia = colonia;
+            inValue.cp = cp;
+            inValue.ciudad = ciudad;
+            inValue.estado = estado;
+            inValue.mensaje = mensaje;
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).InsertaAgenciaOrigen(inValue);
+            mensaje = retVal.mensaje;
+            return retVal.InsertaAgenciaOrigenResult;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenResponse> InsertaAgenciaOrigenAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenRequest request) {
+            return base.Channel.InsertaAgenciaOrigenAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.InsertaAgenciaDestino(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoRequest request) {
+            return base.Channel.InsertaAgenciaDestino(request);
+        }
+        
+        public int InsertaAgenciaDestino(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, ref string mensaje) {
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoRequest();
+            inValue.sucursal = sucursal;
+            inValue.calle = calle;
+            inValue.numint = numint;
+            inValue.numext = numext;
+            inValue.colonia = colonia;
+            inValue.cp = cp;
+            inValue.ciudad = ciudad;
+            inValue.estado = estado;
+            inValue.mensaje = mensaje;
+            WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).InsertaAgenciaDestino(inValue);
+            mensaje = retVal.mensaje;
+            return retVal.InsertaAgenciaDestinoResult;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoResponse> InsertaAgenciaDestinoAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaDestinoRequest request) {
+            return base.Channel.InsertaAgenciaDestinoAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.InsertaServicio(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request) {
             return base.Channel.InsertaServicio(request);
         }
@@ -681,6 +932,25 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioResponse> InsertaServicioAsync(WebTrasladista_consumeWCF.ServiceReference1.InsertaServicioRequest request) {
             return base.Channel.InsertaServicioAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.MostrarServicios(WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest request) {
+            return base.Channel.MostrarServicios(request);
+        }
+        
+        public System.Data.DataTable MostrarServicios(string fecha, string estado, ref string mensaje) {
+            WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest();
+            inValue.fecha = fecha;
+            inValue.estado = estado;
+            inValue.mensaje = mensaje;
+            WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).MostrarServicios(inValue);
+            mensaje = retVal.mensaje;
+            return retVal.MostrarServiciosResult;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosResponse> MostrarServiciosAsync(WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest request) {
+            return base.Channel.MostrarServiciosAsync(request);
         }
     }
 }

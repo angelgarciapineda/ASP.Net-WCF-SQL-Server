@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -33,11 +34,19 @@ namespace WcfServiceTrasladista
             int tiempo_trans, double costo_casetas, double total, ref string mensaje);
 
         [OperationContract]
-        void InsertaGastoVehiculo(int cantidad, double precio,double total, int fkgasto, int fkvehiculo, ref string mensaje);
+        void InsertaGastoVehiculo(int cantidad, double precio, double total, int fkgasto, int fkvehiculo, ref string mensaje);
 
         [OperationContract]
-        void InsertaServicio(String tipo,string estado, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje);
-        // TODO: agregue aquí sus operaciones de servicio
+        int InsertaAgenciaOrigen(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, ref string mensaje);
+
+        [OperationContract]
+        int InsertaAgenciaDestino(string sucursal, string calle, string numint, string numext, string colonia, string cp, string ciudad, string estado, ref string mensaje);
+
+        [OperationContract]
+        void InsertaServicio(String tipo, string estado, int fkuusuario, int fkgasto, int fkagenciaorigen, int fkagenciadestino, ref string mensaje);
+
+        [OperationContract]
+        DataTable MostrarServicios(string fecha, string estado, ref string mensaje);
     }
 
 

@@ -83,143 +83,83 @@
                                     <div class="alert alert-dark" role="alert">
                                         <asp:Label ID="lbRespuesta" runat="server" Text="Label"></asp:Label>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <%-- TARJETA DE CALCULAR GASTO DE SERVICIO --%>
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    Calcular gasto de servicio
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Button ID="btnCargarOperador" runat="server" OnClick="btnCargarOperador_Click" class="btn btn-primary btn-block" Text="Operadores disponible" />
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:DropDownList ID="cmbOperador" runat="server" class="form-control">
-                                                            </asp:DropDownList>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label1" runat="server" Text="Duracion"></asp:Label>
-                                                            <asp:TextBox ID="txtduracion" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label2" runat="server" Text="Kilometros"></asp:Label>
-                                                            <asp:TextBox ID="txtkm" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label for="inputAddress" ID="Label3" runat="server" Text="Tiempo de transporte"></asp:Label>
-                                                            <asp:TextBox ID="txttiempotrans" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label4" runat="server" Text="Costo de transporte"></asp:Label>
-                                                            <asp:TextBox ID="txtcontroltrans" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label5" runat="server" Text="Sueldo"></asp:Label>
-                                                            <asp:TextBox ID="txtsueldo" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label6" runat="server" Text="Salario"></asp:Label>
-                                                            <asp:TextBox ID="txtsalario" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <asp:Label ID="Label7" runat="server" Text="Costo de casetas"></asp:Label>
-                                                        <asp:TextBox ID="txtcostocaseta" runat="server" class="form-control"></asp:TextBox>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <asp:Label ID="Label8" runat="server" Text="Restricciones"></asp:Label>
-                                                        <asp:TextBox ID="txtrestri" runat="server" class="form-control"></asp:TextBox>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <asp:Label ID="Label9" runat="server" Text="Necesidades"></asp:Label>
-                                                        <asp:TextBox ID="txtneces" runat="server" class="form-control"></asp:TextBox>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Button ID="btnCargaVehiculo" runat="server" Text="Vehiculos disponibles" class="btn btn-block btn-primary" OnClick="btnCargaVehiculo_Click" />
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:DropDownList ID="cmbVehiculo" runat="server" class="form-control"></asp:DropDownList>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label11" runat="server" Text="Cantidad"></asp:Label>
-                                                            <asp:TextBox ID="txtcantidad" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label12" runat="server" Text="Precio"></asp:Label>
-                                                            <asp:TextBox ID="txtprecio" runat="server" class="form-control"></asp:TextBox>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <asp:Button ID="btnagregar" runat="server" Text="Añadir" class="btn btn-primary btn-block" OnClick="btnagregar_Click" />
-                                                        <%--                                        <asp:Button ID="btnguardar" runat="server" Text="Guardar" class="btn btn-primary" />--%>
-                                                    </div>
-                                                </div>
+                                    <div>
+                                        <%-- TARJETA DE BUSQUEDA SERVICIO --%>
+                                        <div class="card" style="height: 200%;">
+                                            <div class="card-header">
+                                                Calcular gasto de servicio
                                             </div>
-                                            <%-- FIN TARJETA DE CALCULAR GASTO DE SERVICIO --%>
-                                        </div>
-                                        <div class="col-6">
-                                            <%-- INICIO TARJETA DETALLE DE SERVICIO --%>
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <asp:Label ID="lbGastoServicio" runat="server" Text="Gasto de servicio: "></asp:Label>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Honda Civic Type-R</h5>
-                                                    <p class="card-text">Operador asignado: </p>
-                                                    <p class="card-text">¿Desea añadir más vehiculos?</p>
-                                                    <asp:DropDownList ID="cmbVehiculoExtra" runat="server" class="form-control"></asp:DropDownList>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label10" runat="server" Text="Cantidad"></asp:Label>
-                                                            <asp:TextBox class="form-control" ID="txtCantidadExtra" runat="server"></asp:TextBox>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class="form-group">
+                                                            <asp:Label ID="Label1" runat="server" Text="Buscar servicios: "></asp:Label>
+                                                            <div class="form-group">
+                                                                <asp:DropDownList ID="cmbEstado" runat="server" class="form-control"></asp:DropDownList>
+                                                            </div>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <asp:Label ID="Label13" runat="server" Text="Precio"></asp:Label>
-                                                            <asp:TextBox class="form-control" ID="txtPrecioExtra" runat="server"></asp:TextBox>
+                                                        <div class="form-group">
+                                                            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-block" OnClick="btnBuscar_Click" />
                                                         </div>
                                                     </div>
-
-                                                    <div class="form-group">
-                                                        <asp:Button class="btn btn-primary btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" OnClick="btnAgregarExtra_Click" />
-                                                        <p class="card-text">Agencia origen</p>
-                                                        <asp:DropDownList ID="cmbOrigen" runat="server" class="form-control"></asp:DropDownList>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <p class="card-text">Agencia destino</p>
-                                                        <asp:DropDownList ID="cmbDestino" runat="server" class="form-control"></asp:DropDownList>
-                                                        <p class="card-text">Tipo de servicio</p>
-                                                        <asp:DropDownList ID="cmbTipoServicio" runat="server" class="form-control"></asp:DropDownList>
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <asp:Button class="btn btn-primary" ID="btnGuardarServicio" runat="server" Text="Guardar datos" OnClick="btnGuardarServicio_Click" />
+                                                    <div class="col-8">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:GridView ID="grServicios" runat="server" class="table table-hover table-dark" AllowPaging="True" PageSize="5" OnPageIndexChanging="grServicios_PageIndexChanging" OnSelectedIndexChanged="grServicios_SelectedIndexChanged">
+                                                                        <Columns>
+                                                                            <asp:CommandField ShowSelectButton="True" SelectText="Detalles" />
+                                                                        </Columns>
+                                                                    </asp:GridView>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <asp:Label ID="lbtablita" runat="server"></asp:Label>
                                                     </div>
                                                 </div>
+
                                             </div>
-                                            <%-- FIN TARJETA DE DETALLE DE SERVICIO --%>
                                         </div>
+                                        <%-- FIN TARJETA DE BUSQUEDA DE SERVICIO --%>
+                                    </div>
+                                    <div>
+                                        <%-- INICIO TARJETA DETALLE DE SERVICIO --%>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <asp:Label ID="lbDetalleSolicitud" runat="server" Text="Detalles de la solicitud: "></asp:Label>
+                                            </div>
+                                            <div class="card-body">
+                                                <asp:Label ID="Label2" runat="server" Text="Servicio: " class="card-title"></asp:Label>
+                                                <asp:GridView ID="grDetalleSolicitud" runat="server" class="table table-hover table-dark" AllowPaging="True" PageSize="5"></asp:GridView>
+                                                <%--<div class="form-row">
+                                                    <div class="form-group  col-md-6">
+                                                        <asp:Label ID="Label5" runat="server" Text="Asigna un operador a este servicio"></asp:Label>
+                                                        <asp:DropDownList ID="cmbOperador" runat="server" class="form-control"></asp:DropDownList>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <asp:Label ID="Label13" runat="server" Text="Precio por cada vehiculo a transportar"></asp:Label>
+                                                        <asp:TextBox class="form-control" ID="txtPrecioExtra" runat="server"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <asp:Button class="btn btn-primary" ID="btnGuardarServicio" runat="server" Text="Guardar datos" OnClick="btnGuardarServicio_Click" />
+                                                </div>--%>
+                                            </div>
+                                        </div>
+                                        <%-- FIN TARJETA DE DETALLE DE SERVICIO --%>
                                     </div>
                                 </div>
                             </div>
-                            <%-- FIN PANEL DE HOME --%>
-                            <%-- INICIO PANEL DE REGISTROS --%>
+                            <%-- FIN PANEL DE HOME --%>                            <%-- INICIO PANEL DE REGISTROS --%>
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Este div es test 2</div>
-                            <%-- FIN DE PANEL REGISTROS --%>
-                            <%-- INICIO PANEL DE ESTADISTICAS --%>
+                            <%-- FIN DE PANEL REGISTROS --%>                            <%-- INICIO PANEL DE ESTADISTICAS --%>
                             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Este div es test 3</div>
-                            <%-- FIN DE PANEL DE ESTADISTICAS --%>
-                            <%-- INICIO PANEL DE BASE DE DATOS --%>
+                            <%-- FIN DE PANEL DE ESTADISTICAS --%>                            <%-- INICIO PANEL DE BASE DE DATOS --%>
                             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Este div es test 4</div>
                             <%-- FIN DE PANEL DE BASE DE DATOS --%>
                         </div>
