@@ -135,14 +135,14 @@
                                                         <asp:TextBox ID="txtEstado" runat="server" class="form-control"></asp:TextBox>
                                                     </div>
                                                     <div class="form-group">
-                                                        <asp:Button ID="btnGuardarAgencias" runat="server" Text="Guardar" class="btn btn-block btn-primary" OnClick="btnGuardarAgencias_Click" />
+                                                        <asp:Button ID="btnGuardarAgencias" runat="server" Text="Guardar" class="btn btn-block btn-success" OnClick="btnGuardarAgencias_Click" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-6">
                                                     <div class="card text-white bg-primary mb-3">
                                                         <div class="card-header">
-                                                            <asp:Label ID="Label32" runat="server" Text="Sucursal: "></asp:Label>
+                                                            <asp:Label ID="Label32" runat="server" Text="Agencia de origen: "></asp:Label>
                                                             <asp:Label ID="lbSucursalOrigen" runat="server"></asp:Label>
                                                         </div>
                                                         <div class="card-body">
@@ -181,7 +181,7 @@
                                                     </div>
                                                     <div class="card text-white bg-danger mb-3">
                                                         <div class="card-header">
-                                                            <asp:Label ID="Label24" runat="server" Text="Sucursal: "></asp:Label>
+                                                            <asp:Label ID="Label24" runat="server" Text="Agencia de destino: "></asp:Label>
                                                             <asp:Label ID="lbSucursalDestino" runat="server"></asp:Label>
                                                         </div>
                                                         <div class="card-body">
@@ -274,7 +274,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <asp:Button ID="btnagregar" runat="server" Text="Añadir" class="btn btn-primary btn-block" OnClick="btnagregar_Click" />
+                                                        <asp:Button ID="btnagregar" runat="server" Text="Añadir" class="btn btn-success btn-block" OnClick="btnagregar_Click" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -299,7 +299,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <asp:Button class="btn btn-primary btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" OnClick="btnAgregarExtra_Click" />
+                                                        <asp:Button class="btn btn-success btn-block " ID="btnAgregarExtra" runat="server" Text="Añadir" OnClick="btnAgregarExtra_Click" />
                                                     </div>
 
                                                     <div class="form-group">
@@ -307,8 +307,31 @@
                                                         <asp:DropDownList ID="cmbTipoServicio" runat="server" class="form-control"></asp:DropDownList>
 
                                                     </div>
-                                                    <div class="form-group">
-                                                        <asp:Button class="btn btn-primary" ID="btnGuardarServicio" runat="server" Text="Guardar datos" OnClick="btnGuardarServicio_Click" />
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                                                        Guardar datos
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="staticBackdropLabel">Confirmar servicio de traslado</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Dar click en botón "Solicitar servicio" para confirmar los datos y solicitar servicio de traslado.
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                    <asp:Button class="btn btn-success" ID="btnGuardarServicio" runat="server" Text="Solicitar servicio" OnClick="btnGuardarServicio_Click" />
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
