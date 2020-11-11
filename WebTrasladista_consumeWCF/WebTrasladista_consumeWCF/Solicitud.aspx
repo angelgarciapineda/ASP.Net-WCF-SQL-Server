@@ -55,7 +55,7 @@
                 <h5 class="card-title">Special title treatment</h5>
                 <div class="row">
                     <%-- Tarjeta lateral izquierda --%>
-                    <div class="col-3">
+                    <div class="col-2">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a>
                                 <div class="card">
@@ -67,18 +67,15 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Servicio</a>
-                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Registros</a>
-                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Estadisticas</a>
-                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Base de datos</a>
-                            <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Cerrar sesión</a>
+                            <a class="nav-link active" id="v-pills-solicitud-tab" data-toggle="pill" href="#v-pills-solicitud" role="tab" aria-controls="v-pills-solicitud" aria-selected="true">Solicitar servicio</a>
+                            <a class="nav-link" id="v-pills-misservicios-tab" data-toggle="pill" href="#v-pills-misservicios" role="tab" aria-controls="v-pills-misservicios" aria-selected="false">Mis servicios</a>
                         </div>
                     </div>
                     <%-- Tarjeta central --%>
-                    <div class="col-9">
+                    <div class="col-10">
                         <div class="tab-content" id="v-pills-tabContent">
                             <%-- INICIO PANEL DE HOME --%>
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="tab-pane fade show active" id="v-pills-solicitud" role="tabpanel" aria-labelledby="v-pills-solicitud-tab">
                                 <div class="card-body">
                                     <div class="alert alert-dark" role="alert">
                                         <asp:Label ID="lbRespuesta" runat="server" Text="Label"></asp:Label>
@@ -90,7 +87,7 @@
                                         <div class="card-body">
                                             <div class="row">
 
-                                                <div class="col-6">
+                                                <div class="col-4">
                                                     <div class="form-group">
                                                         <asp:Label ID="Label1" runat="server" Text="Agregar destinos" class="h4"></asp:Label>
                                                     </div>
@@ -139,82 +136,88 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-6">
-                                                    <div class="card text-white bg-primary mb-3">
-                                                        <div class="card-header">
-                                                            <asp:Label ID="Label32" runat="server" Text="Agencia de origen: "></asp:Label>
-                                                            <asp:Label ID="lbSucursalOrigen" runat="server"></asp:Label>
+                                                <div class="col-8">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="card text-white bg-primary mb-3">
+                                                                <div class="card-header">
+                                                                    <asp:Label ID="Label32" runat="server" Text="Agencia de origen: "></asp:Label>
+                                                                    <asp:Label ID="lbSucursalOrigen" runat="server"></asp:Label>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label5" runat="server" Text="Calle: "></asp:Label>
+                                                                        <asp:Label ID="lbCalleOrigen" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label18" runat="server" Text="N° exterior: "></asp:Label>
+                                                                        <asp:Label ID="lbNumExtOrigen" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label19" runat="server" Text="N° interior: "></asp:Label>
+                                                                        <asp:Label ID="lbNumIntOrigen" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label20" runat="server" Text="Colonia: "></asp:Label>
+                                                                        <asp:Label ID="lbColOrigen" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label21" runat="server" Text="C.P.: "></asp:Label>
+                                                                        <asp:Label ID="lbCPOrigen" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label22" runat="server" Text="Ciudad: "></asp:Label>
+                                                                        <asp:Label ID="lbCiudadOrigen" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label23" runat="server" Text="Estado: "></asp:Label>
+                                                                        <asp:Label ID="lbEstadoOrigen" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Button ID="btnEditarOrigen" runat="server" Text="Editar" class="btn btn-light" Style="float: right;" OnClick="btnEditarOrigen_Click" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="card-body">
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label5" runat="server" Text="Calle: "></asp:Label>
-                                                                <asp:Label ID="lbCalleOrigen" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label18" runat="server" Text="N° exterior: "></asp:Label>
-                                                                <asp:Label ID="lbNumExtOrigen" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label19" runat="server" Text="N° interior: "></asp:Label>
-                                                                <asp:Label ID="lbNumIntOrigen" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label20" runat="server" Text="Colonia: "></asp:Label>
-                                                                <asp:Label ID="lbColOrigen" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label21" runat="server" Text="C.P.: "></asp:Label>
-                                                                <asp:Label ID="lbCPOrigen" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label22" runat="server" Text="Ciudad: "></asp:Label>
-                                                                <asp:Label ID="lbCiudadOrigen" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label23" runat="server" Text="Estado: "></asp:Label>
-                                                                <asp:Label ID="lbEstadoOrigen" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Button ID="btnEditarOrigen" runat="server" Text="Editar" class="btn btn-warning" Style="float: right;" OnClick="btnEditarOrigen_Click" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card text-white bg-danger mb-3">
-                                                        <div class="card-header">
-                                                            <asp:Label ID="Label24" runat="server" Text="Agencia de destino: "></asp:Label>
-                                                            <asp:Label ID="lbSucursalDestino" runat="server"></asp:Label>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label25" runat="server" Text="Calle: "></asp:Label>
-                                                                <asp:Label ID="lbCalleDestino" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label26" runat="server" Text="N° exterior: "></asp:Label>
-                                                                <asp:Label ID="lbNumExtDestino" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label27" runat="server" Text="N° interior: "></asp:Label>
-                                                                <asp:Label ID="lbNumIntDestino" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label28" runat="server" Text="Colonia: "></asp:Label>
-                                                                <asp:Label ID="lbColDestino" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label29" runat="server" Text="C.P: "></asp:Label>
-                                                                <asp:Label ID="lbCPDestino" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label30" runat="server" Text="Ciudad"></asp:Label>
-                                                                <asp:Label ID="lbCiudadDestino" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Label ID="Label31" runat="server" Text="Estado"></asp:Label>
-                                                                <asp:Label ID="lbEstadoDestino" runat="server"></asp:Label>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <asp:Button ID="btnEditarDestino" runat="server" Text="Editar" class="btn btn-warning" Style="float: right;" OnClick="btnEditarDestino_Click" />
+                                                        <div class="col-6">
+                                                            <div class="card text-white bg-danger mb-3">
+                                                                <div class="card-header">
+                                                                    <asp:Label ID="Label24" runat="server" Text="Agencia de destino: "></asp:Label>
+                                                                    <asp:Label ID="lbSucursalDestino" runat="server"></asp:Label>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label25" runat="server" Text="Calle: "></asp:Label>
+                                                                        <asp:Label ID="lbCalleDestino" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label26" runat="server" Text="N° exterior: "></asp:Label>
+                                                                        <asp:Label ID="lbNumExtDestino" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label27" runat="server" Text="N° interior: "></asp:Label>
+                                                                        <asp:Label ID="lbNumIntDestino" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label28" runat="server" Text="Colonia: "></asp:Label>
+                                                                        <asp:Label ID="lbColDestino" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label29" runat="server" Text="C.P: "></asp:Label>
+                                                                        <asp:Label ID="lbCPDestino" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label30" runat="server" Text="Ciudad"></asp:Label>
+                                                                        <asp:Label ID="lbCiudadDestino" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Label ID="Label31" runat="server" Text="Estado"></asp:Label>
+                                                                        <asp:Label ID="lbEstadoDestino" runat="server"></asp:Label>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <asp:Button ID="btnEditarDestino" runat="server" Text="Editar" class="btn btn-light" Style="float: right;" OnClick="btnEditarDestino_Click" />
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -284,10 +287,9 @@
                                             <%-- INICIO TARJETA DE SOLICITUD DE SERVICIO --%>
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <asp:Label ID="lbGastoServicio" runat="server" Text="Gasto de servicio: "></asp:Label>
+                                                    <asp:Label ID="lbGastoServicio" runat="server" Text="Añadir más vehiculos: "></asp:Label>
                                                 </div>
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Honda Civic Type-R</h5>
                                                     <p class="card-text">¿Desea añadir más vehiculos?</p>
                                                     <asp:DropDownList ID="cmbVehiculoExtra" runat="server" class="form-control"></asp:DropDownList>
 
@@ -342,14 +344,8 @@
                             </div>
                             <%-- FIN PANEL DE HOME --%>
                             <%-- INICIO PANEL DE REGISTROS --%>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Este div es test 2</div>
+                            <div class="tab-pane fade" id="v-pills-misservicios" role="tabpanel" aria-labelledby="v-pills-misservicios-tab">Este div es test 2</div>
                             <%-- FIN DE PANEL REGISTROS --%>
-                            <%-- INICIO PANEL DE ESTADISTICAS --%>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Este div es test 3</div>
-                            <%-- FIN DE PANEL DE ESTADISTICAS --%>
-                            <%-- INICIO PANEL DE BASE DE DATOS --%>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Este div es test 4</div>
-                            <%-- FIN DE PANEL DE BASE DE DATOS --%>
                         </div>
                     </div>
                 </div>
