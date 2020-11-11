@@ -55,7 +55,7 @@
                 <h5 class="card-title">Special title treatment</h5>
                 <div class="row">
                     <%-- Tarjeta lateral izquierda --%>
-                    <div class="col-3">
+                    <div class="col-2">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a>
                                 <div class="card">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <%-- Tarjeta central --%>
-                    <div class="col-9">
+                    <div class="col-10">
                         <div class="tab-content" id="v-pills-tabContent">
                             <%-- INICIO PANEL DE HOME --%>
                             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -85,73 +85,109 @@
                                     </div>
                                     <div>
                                         <%-- TARJETA DE BUSQUEDA SERVICIO --%>
-                                        <div class="card" style="height: 200%;">
+                                        <div class="card" style="height: 2000px;">
                                             <div class="card-header">
                                                 Calcular gasto de servicio
                                             </div>
                                             <div class="card-body">
                                                 <div class="row">
-                                                    <div class="col-4">
-                                                        <div class="form-group">
-                                                            <asp:Label ID="Label1" runat="server" Text="Buscar servicios: "></asp:Label>
-                                                            <div class="form-group">
-                                                                <asp:DropDownList ID="cmbEstado" runat="server" class="form-control"></asp:DropDownList>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-block" OnClick="btnBuscar_Click" />
-                                                        </div>
+                                                    <div class="form-group col-4">
+                                                        <label>Buscar servicios en estado</label>
+                                                        <asp:DropDownList ID="cmbEstado" runat="server" class="form-control"></asp:DropDownList>
                                                     </div>
-                                                    <div class="col-8">
-                                                        <table>
-                                                            <tr>
-                                                                <td>
-                                                                    <asp:GridView ID="grServicios" runat="server" class="table table-hover table-dark" AllowPaging="True" PageSize="5" OnPageIndexChanging="grServicios_PageIndexChanging" OnSelectedIndexChanged="grServicios_SelectedIndexChanged">
-                                                                        <Columns>
-                                                                            <asp:CommandField ShowSelectButton="True" SelectText="Detalles" />
-                                                                        </Columns>
-                                                                    </asp:GridView>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <asp:Label ID="lbtablita" runat="server"></asp:Label>
+                                                    <div class="form-group col-4">
+                                                        <label>Seleccionar fecha</label>
+                                                        <asp:TextBox type="date" ID="txtFecha" runat="server" class="form-control"></asp:TextBox>
+
+                                                    </div>
+                                                    <div class="form-group col-4">
+                                                        <label></label>
+                                                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-success btn-block" OnClick="btnBuscar_Click" />
                                                     </div>
                                                 </div>
 
-                                            </div>
-                                        </div>
-                                        <%-- FIN TARJETA DE BUSQUEDA DE SERVICIO --%>
-                                    </div>
-                                    <div>
-                                        <%-- INICIO TARJETA DETALLE DE SERVICIO --%>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <asp:Label ID="lbDetalleSolicitud" runat="server" Text="Detalles de la solicitud: "></asp:Label>
-                                            </div>
-                                            <div class="card-body">
-                                                <asp:Label ID="Label2" runat="server" Text="Servicio: " class="card-title"></asp:Label>
-                                                <asp:GridView ID="grDetalleSolicitud" runat="server" class="table table-hover table-dark" AllowPaging="True" PageSize="5"></asp:GridView>
-                                                <%--<div class="form-row">
-                                                    <div class="form-group  col-md-6">
-                                                        <asp:Label ID="Label5" runat="server" Text="Asigna un operador a este servicio"></asp:Label>
-                                                        <asp:DropDownList ID="cmbOperador" runat="server" class="form-control"></asp:DropDownList>
-                                                    </div>
+
+                                                <div class="form-group">
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:GridView ID="grServicios" runat="server" class="table table-hover table-dark" AllowPaging="True" PageSize="5" OnPageIndexChanging="grServicios_PageIndexChanging" OnSelectedIndexChanged="grServicios_SelectedIndexChanged">
+                                                                    <Columns>
+                                                                        <asp:CommandField ShowSelectButton="True" SelectText="Detalles" />
+                                                                    </Columns>
+                                                                </asp:GridView>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <asp:Label ID="lbtablita" runat="server" class="h5"></asp:Label>
                                                 </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <asp:Label ID="Label13" runat="server" Text="Precio por cada vehiculo a transportar"></asp:Label>
-                                                        <asp:TextBox class="form-control" ID="txtPrecioExtra" runat="server"></asp:TextBox>
+                                                <div class="form-group">
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:GridView ID="gvDetalleServicio" runat="server" class="table table-hover table-light" AllowPaging="True" PageSize="5">
+                                                                </asp:GridView>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="card bg-light">
+                                                            <div class="card-body">
+                                                                <div class="form-group">
+                                                                    <label>Servicio: </label>
+                                                                    <asp:Label ID="lbNumServicio" runat="server" class="text-primary"></asp:Label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Fecha de solicitud: </label>
+                                                                    <asp:Label ID="lbFechaSolicitud" runat="server" class="text-primary"></asp:Label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Tipo de solicitud: </label>
+                                                                    <asp:Label ID="lbTipoSolicitud" runat="server" class="text-primary"></asp:Label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Estado del servicio: </label>
+                                                                    <asp:Label ID="lbEstado" runat="server" class="text-primary"></asp:Label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Cliente: </label>
+                                                                    <asp:Label ID="lbCliente" runat="server" class="text-primary"></asp:Label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Punto de origen: </label>
+                                                                    <asp:Label ID="lbOrigen" runat="server" class="text-primary"></asp:Label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Punto de origen: </label>
+                                                                    <asp:Label ID="lbDestino" runat="server" class="text-primary"></asp:Label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="card bg-light">
+                                                            <div class="card-body">
+                                                                <div class="form-group">
+                                                                    <label>Asignar un operador</label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <asp:Button ID="btnOperadorDispo" runat="server" Text="Operadores disponibles" class="btn btn-primary" />
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <asp:DropDownList ID="cmbOperadores" runat="server" class="form-control"></asp:DropDownList>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <asp:Button class="btn btn-primary" ID="btnGuardarServicio" runat="server" Text="Guardar datos" OnClick="btnGuardarServicio_Click" />
-                                                </div>--%>
+                                                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar servicio" class="btn btn-success" Visible="false" Style="float: right;" />
+                                                </div>
                                             </div>
                                         </div>
-                                        <%-- FIN TARJETA DE DETALLE DE SERVICIO --%>
+                                        <%-- FIN TARJETA DE BUSQUEDA DE SERVICIO --%>
                                     </div>
                                 </div>
                             </div>

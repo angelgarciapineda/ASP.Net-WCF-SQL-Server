@@ -172,6 +172,9 @@
     <Content Include="Connected Services\ServiceReference1\WebTrasladista_consumeWCF.ServiceReference1.InsertaAgenciaOrigenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference1\WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Web.Debug.config">

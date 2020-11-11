@@ -74,6 +74,12 @@
   <wsdl:message name="IService1_MostrarServicios_OutputMessage">
     <wsdl:part name="parameters" element="tns:MostrarServiciosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_MostrarDetalle_Servicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarDetalle_Servicio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarDetalle_Servicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarDetalle_ServicioResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Login" message="tns:IService1_Login_InputMessage" />
@@ -118,6 +124,10 @@
     <wsdl:operation name="MostrarServicios">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarServicios" message="tns:IService1_MostrarServicios_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarServiciosResponse" message="tns:IService1_MostrarServicios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarDetalle_Servicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarDetalle_Servicio" message="tns:IService1_MostrarDetalle_Servicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarDetalle_ServicioResponse" message="tns:IService1_MostrarDetalle_Servicio_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -214,6 +224,15 @@
     </wsdl:operation>
     <wsdl:operation name="MostrarServicios">
       <soap:operation soapAction="http://tempuri.org/IService1/MostrarServicios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarDetalle_Servicio">
+      <soap:operation soapAction="http://tempuri.org/IService1/MostrarDetalle_Servicio" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

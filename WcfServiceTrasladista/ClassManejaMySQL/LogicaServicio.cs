@@ -266,8 +266,7 @@ namespace ClassManejaMySQL
             }
             catch (Exception c)
             {
-                string h = "";
-                h = c.Message;
+                mensaje = c.Message;
             }
             return idGasto;
 
@@ -438,22 +437,67 @@ namespace ClassManejaMySQL
         //Mostrar datos
         public System.Data.DataTable MostrarServicios(string fecha, string estado, ref string msj)
         {
-            SqlConnection ctn3 = null;
-            System.Data.DataSet caja = null;
             System.Data.DataTable salida = null;
-            string ms = "";
-            string query = "SELECT Servicio.idServicio as 'ID', Servicio.Creado_el as 'Fecha de solicitud', Tipo_servicio, Estado, CONCAT(Nombre,' ',Ap,' ',Am)as 'Cliente' " +
-                "FROM Servicio, Usuario, Agencia WHERE Estado='" + estado + "' AND Servicio.Creado_el>='" + fecha + "' and Servicio.fk_usuario = Usuario.idUsuario and Servicio.fk_agenciaOrigen = Agencia.idAgencia";
-
-            ctn3 = capa1.AbrirConexion(ref ms);
-            if (ctn3 != null)
+            try
             {
-                caja = capa1.ConsultaDataSet(ctn3, query, ref ms);
+                SqlConnection ctn3 = null;
+                System.Data.DataSet caja = null;
+                string ms = "";
+                string query = $"SELECT Servicio.idServicio as 'N°',Servicio.Creado_el as 'Fecha de solicitud', Tipo_servicio as 'Tipo de servicio', Servicio.Estado, CONCAT(Nombre,' ',Ap,' ',Am)as 'Cliente', CONCAT(AgenciaOrigen.Nombre_sucursal,',',AgenciaOrigen.Calle,' #',AgenciaOrigen.Num_exterior,',',AgenciaOrigen.Colonia,',',AgenciaOrigen.CP,',',AgenciaOrigen.Ciudad,',',AgenciaOrigen.Estado) as 'Origen',CONCAT(AgenciaDestino.Nombre_sucursal, ',', AgenciaDestino.Calle, ' #', AgenciaDestino.Num_exterior, ',', AgenciaDestino.Colonia, ',', AgenciaDestino.CP, ',', AgenciaDestino.Ciudad, ',', AgenciaDestino.Estado) as 'Destino' " +
+                    $"FROM Servicio INNER JOIN Usuario ON Servicio.fk_usuario = Usuario.idUsuario " +
+                    $"INNER JOIN AgenciaOrigen ON Servicio.fk_agenciaOrigen = AgenciaOrigen.idAgenciaO " +
+                    $"INNER JOIN AgenciaDestino ON Servicio.fk_agenciaDestino = AgenciaDestino.idAgenciaD " +
+                    $"WHERE Servicio.Estado='{estado}' AND Servicio.Creado_el>'{fecha}'";
 
-                if (caja != null)
+                ctn3 = capa1.AbrirConexion(ref ms);
+                if (ctn3 != null)
                 {
-                    salida = caja.Tables[0];
+                    caja = capa1.ConsultaDataSet(ctn3, query, ref ms);
+
+                    if (caja != null)
+                    {
+                        salida = caja.Tables[0];
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                msj = ex.Message;
+            }
+            return salida;
+
+        }
+        //Mostrar detalles de un servicio
+        public System.Data.DataTable MostrarDetalleServicio(string fecha, string estado, int fk_servicio, ref string msj)
+        {
+            System.Data.DataTable salida = null;
+            try
+            {
+                SqlConnection ctn3 = null;
+                System.Data.DataSet caja = null;
+                string ms = "";
+                string query = $"SELECT Servicio.idServicio as 'N°', Servicio.Creado_el as 'Fecha de solicitud', Tipo_servicio as 'Tipo de servicio', Servicio.Estado,Marca, Modelo, Color, Gastoservicio_Vehiculo.Cantidad, AgenciaOrigen.Nombre_sucursal as 'Origen', AgenciaDestino.Nombre_sucursal as 'Destino' " +
+                    $"FROM Servicio INNER JOIN Gasto_servicio ON Servicio.fk_gastoservicio = Gasto_servicio.idGastoservicio " +
+                    $"INNER JOIN Gastoservicio_Vehiculo ON Gasto_servicio.idGastoservicio = Gastoservicio_Vehiculo.fk_gastoservicio " +
+                    $"INNER JOIN Vehiculo ON Gastoservicio_Vehiculo.fk_vehiculo = Vehiculo.idVehiculo " +
+                    $"INNER JOIN AgenciaOrigen ON Servicio.fk_agenciaOrigen = AgenciaOrigen.idAgenciaO " +
+                    $"INNER JOIN AgenciaDestino ON Servicio.fk_agenciaDestino = AgenciaDestino.idAgenciaD " +
+                    $"WHERE Servicio.Estado = '{estado}' AND Servicio.Creado_el > '{fecha}' AND Servicio.idServicio = {fk_servicio}; ";
+
+                ctn3 = capa1.AbrirConexion(ref ms);
+                if (ctn3 != null)
+                {
+                    caja = capa1.ConsultaDataSet(ctn3, query, ref ms);
+
+                    if (caja != null)
+                    {
+                        salida = caja.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                msj = ex.Message;
             }
             return salida;
 

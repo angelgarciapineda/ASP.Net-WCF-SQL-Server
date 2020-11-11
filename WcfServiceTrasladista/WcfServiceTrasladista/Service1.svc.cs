@@ -51,6 +51,11 @@ namespace WcfServiceTrasladista
             return objfinal.ValidaLogin(ref msj, email, password, ref valida);
         }
 
+        public DataTable MostrarDetalle_Servicio(string fecha, string estado, int fkservicio, ref string mensaje)
+        {
+            return objfinal.MostrarDetalleServicio(fecha, estado, fkservicio, ref mensaje);
+        }
+
         public DataTable MostrarServicios(string fecha, string estado, ref string mensaje)
         {
             return objfinal.MostrarServicios(fecha, estado, ref mensaje);

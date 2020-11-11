@@ -91,6 +91,13 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarServicios", ReplyAction="http://tempuri.org/IService1/MostrarServiciosResponse")]
         System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosResponse> MostrarServiciosAsync(WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarDetalle_Servicio", ReplyAction="http://tempuri.org/IService1/MostrarDetalle_ServicioResponse")]
+        WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioResponse MostrarDetalle_Servicio(WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarDetalle_Servicio", ReplyAction="http://tempuri.org/IService1/MostrarDetalle_ServicioResponse")]
+        System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioResponse> MostrarDetalle_ServicioAsync(WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -689,6 +696,54 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MostrarDetalle_Servicio", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class MostrarDetalle_ServicioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string fecha;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string estado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public int fkservicio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string mensaje;
+        
+        public MostrarDetalle_ServicioRequest() {
+        }
+        
+        public MostrarDetalle_ServicioRequest(string fecha, string estado, int fkservicio, string mensaje) {
+            this.fecha = fecha;
+            this.estado = estado;
+            this.fkservicio = fkservicio;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MostrarDetalle_ServicioResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class MostrarDetalle_ServicioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Data.DataTable MostrarDetalle_ServicioResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string mensaje;
+        
+        public MostrarDetalle_ServicioResponse() {
+        }
+        
+        public MostrarDetalle_ServicioResponse(System.Data.DataTable MostrarDetalle_ServicioResult, string mensaje) {
+            this.MostrarDetalle_ServicioResult = MostrarDetalle_ServicioResult;
+            this.mensaje = mensaje;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : WebTrasladista_consumeWCF.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
     }
@@ -951,6 +1006,26 @@ namespace WebTrasladista_consumeWCF.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosResponse> MostrarServiciosAsync(WebTrasladista_consumeWCF.ServiceReference1.MostrarServiciosRequest request) {
             return base.Channel.MostrarServiciosAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioResponse WebTrasladista_consumeWCF.ServiceReference1.IService1.MostrarDetalle_Servicio(WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioRequest request) {
+            return base.Channel.MostrarDetalle_Servicio(request);
+        }
+        
+        public System.Data.DataTable MostrarDetalle_Servicio(string fecha, string estado, int fkservicio, ref string mensaje) {
+            WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioRequest inValue = new WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioRequest();
+            inValue.fecha = fecha;
+            inValue.estado = estado;
+            inValue.fkservicio = fkservicio;
+            inValue.mensaje = mensaje;
+            WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioResponse retVal = ((WebTrasladista_consumeWCF.ServiceReference1.IService1)(this)).MostrarDetalle_Servicio(inValue);
+            mensaje = retVal.mensaje;
+            return retVal.MostrarDetalle_ServicioResult;
+        }
+        
+        public System.Threading.Tasks.Task<WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioResponse> MostrarDetalle_ServicioAsync(WebTrasladista_consumeWCF.ServiceReference1.MostrarDetalle_ServicioRequest request) {
+            return base.Channel.MostrarDetalle_ServicioAsync(request);
         }
     }
 }

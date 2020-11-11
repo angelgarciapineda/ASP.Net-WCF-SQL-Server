@@ -47,6 +47,9 @@ namespace WcfServiceTrasladista
 
         [OperationContract]
         DataTable MostrarServicios(string fecha, string estado, ref string mensaje);
+
+        [OperationContract]
+        DataTable MostrarDetalle_Servicio(string fecha, string estado, int fkservicio, ref string mensaje);
     }
 
 
