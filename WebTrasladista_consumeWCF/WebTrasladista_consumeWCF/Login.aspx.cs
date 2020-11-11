@@ -30,15 +30,47 @@ namespace WebTrasladista_consumeWCF
                 }
                 else
                 {
-                    lbResult.Text = "No existe el usuario";
+                    lbSuccess.Visible = false;
+                    lbError.Visible = true;
+                    lbError.Text = "No existe el usuario";
                     Response.Redirect("Login.aspx");
                 }
             }
             catch (Exception)
             {
-                lbResult.Text = "Insert todos los campos";
+                lbSuccess.Visible = false;
+                lbError.Visible = true;
+                lbError.Text = "Insert todos los campos";
             }
 
+        }
+
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String mensaje = "";
+                int fkrol = 3;
+                if (txtPasswordR.Text != txtConfirmaPass.Text)
+                {
+                    lbSuccess.Visible = false;
+                    lbError.Visible = true;
+                    lbError.Text = "No coinciden las contraseñas";
+                }
+                else
+                {
+                    serviceTras.InsertaUsuario(txtNombre.Text, txtPaterno.Text, txtMaterno.Text, Convert.ToInt16(txtEdad.Text), txtRfc.Text, txtEmailR.Text, txtPasswordR.Text, fkrol, ref mensaje);
+                    lbError.Visible = false;
+                    lbSuccess.Visible = true;
+                    lbSuccess.Text = "Registro correcto";
+                }
+            }
+            catch (Exception c)
+            {
+                lbSuccess.Visible = false;
+                lbError.Visible = true;
+                lbError.Text = c.Message;
+            }
         }
     }
 }

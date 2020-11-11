@@ -56,25 +56,77 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <asp:Label class="text-danger" ID="lbResult" runat="server" Text=""></asp:Label>
+                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Registrarse</button>
+                                <asp:Button Style="float: right;" ID="btnSignin" runat="server" Text="Ingresar" class="btn btn-primary" OnClick="btnSignin_Click" />
                             </div>
-                            <div class="form-group">
-                                <asp:Button ID="btnSignin" runat="server" Text="Ingresar" class="btn btn-primary" OnClick="btnSignin_Click" />
-
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="Label3" runat="server" Text="Nombre" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="Label4" runat="server" Text="Appelido paterno" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtPaterno" runat="server" class="form-control"></asp:TextBox>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="Label5" runat="server" Text="Apellido materno" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtMaterno" runat="server" class="form-control"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="Label6" runat="server" Text="RFC" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtRfc" runat="server" class="form-control"></asp:TextBox>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="Label8" runat="server" Text="Edad" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtEdad" runat="server" class="form-control"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-8">
+                                                    <asp:Label ID="Label7" runat="server" Text="Email" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtEmailR" runat="server" class="form-control" type="email" aria-describedby="emailHelp"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="Label9" runat="server" Text="Contraseña" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtPasswordR" runat="server" class="form-control" type="password"></asp:TextBox>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="Label10" runat="server" Text="Confirmar contraseña" class="col-form-label"></asp:Label>
+                                                    <asp:TextBox ID="txtConfirmaPass" runat="server" class="form-control" type="password"></asp:TextBox>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <asp:Label ID="lbConfirmacion" runat="server" class="col-form-label"></asp:Label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <asp:Button ID="btnRegistrarse" runat="server" Text="Registrarse" class="btn btn-success" OnClick="btnRegistrarse_Click" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <p style="float: left;" class="text-white">¿No tienes una cuenta? </p>
-                                <a href="Register.aspx" id="emailHelp" class="form-text text-muted text-white">Registrarse</a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
+        <asp:Label ID="lbError" runat="server" class="form-control text-white bg-danger" Visible="false"></asp:Label>
+        <asp:Label ID="lbSuccess" runat="server" class="form-control text-white bg-success" Visible="false"></asp:Label>
     </form>
 </body>
 </html>
